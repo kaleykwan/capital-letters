@@ -213,10 +213,6 @@ function Game({stage, setStage}) {
   };
 
   return (
-    // <div className="App">
-    //   <nav>
-    //     <h1>Wordle</h1>
-    //   </nav>
     <AppContext.Provider
       value={{
         board,
@@ -235,11 +231,12 @@ function Game({stage, setStage}) {
       <div className="game">
         <WordBoard />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
-        <button onClick={clearBoard}>Clear Board</button>
+        <button onClick={clearBoard} disabled={gameOver.gameOver}>
+          Clear Board
+        </button>
         <button onClick={signOut}>Logout</button>
       </div>
     </AppContext.Provider>
-    // </div>
   );
 }
 
