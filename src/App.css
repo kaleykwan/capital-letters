@@ -159,15 +159,15 @@ nav h1 {
 }
 
 .progress-circle {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid #751a87;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 10px;
-  font-size: 18px;
+  font-size: 22px;
   position: relative; 
 }
 
@@ -177,7 +177,7 @@ nav h1 {
 .progress-circle::before {
   content: "";
   position: absolute;
-  width: 65%;
+  width: 55%;
   height: 3px;
   background-color: black;
   top: 50%;
