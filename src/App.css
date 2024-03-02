@@ -39,7 +39,7 @@ nav h1 {
 }
 
 .board {
-  width: 450px;
+  width: 320px;
   height: 550px;
   /* border: 1px solid black; */
   display: flex;
@@ -50,7 +50,7 @@ nav h1 {
   flex: 33%;
   display: flex;
   flex-direction: row;
-  margin: 5px;
+  margin: 3px;
 }
 
 .correct-word {
@@ -72,9 +72,9 @@ nav h1 {
   flex: 30%;
   /* height: 100%; */
   height: 45px;
-  border: 1px solid grey;
-  margin-right: 5px;
-  margin-left: 5px;
+  border: 1px solid #919191;
+  margin-right: 3px;
+  margin-left: 3px;
   display: grid;
   place-items: center;
   font-size: 30px;
@@ -127,9 +127,9 @@ nav h1 {
 }
 
 .key {
-  width: 50px;
+  width: 45px;
   height: 50px;
-  margin: 3px;
+  margin: 2px;
   border-radius: 4px;
   display: grid;
   place-items: center;
@@ -139,7 +139,7 @@ nav h1 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
 }
 
 #big {
@@ -152,6 +152,9 @@ nav h1 {
 .progress-bar {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
 }
 
 .progress-circle {
@@ -167,11 +170,16 @@ nav h1 {
 }
 
 .progress-circle.completed {
-  background-color: #4caf50; /* Green color for completed circles */
+  background-color: #4caf50;
 }
 
 .progress-line {
   flex: 1;
   height: 2px;
   background-color: #ccc;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
 }

@@ -243,11 +243,13 @@ function Game({ stage, setStage }) {
       <div className="game">
         <WordBoard />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+        <div className="button-row">
         <button onClick={() => nextStage()}>Next</button>
         <button onClick={() => clearBoard()} disabled={gameOver.gameOver}>
           Clear Board
         </button>
         <button onClick={signOut}>Logout</button>
+        </div>
       </div>
     </AppContext.Provider>
   );

@@ -11,7 +11,7 @@ function ProgressBar({ currentLevel }) {
           {level <= currentLevel ? <span>&#10003;</span> : level}
         </div>
       ))}
-      <div className="progress-line"></div>
+      {/* <div className="progress-line"></div> */}
     </div>
   );
 }
