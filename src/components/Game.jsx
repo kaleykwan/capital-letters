@@ -141,6 +141,7 @@ function Game() {
       setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
     } else {
       alert("Word not found");
+      return;
     }
 
     if (currWord.toLowerCase() === correctWord) {
