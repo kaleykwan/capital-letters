@@ -4,9 +4,7 @@ import Game from "./components/Game";
 import React, { createContext, useEffect } from "react";
 import Auth from "./pages/Auth";
 import { supabase } from "./supabaseClient";
-
-export const AppContext = createContext();
-export const UserContext = createContext();
+import { UserContext } from "./Contexts";
 
 function App() {
   const [session, setSession] = useState(null);

@@ -7,16 +7,32 @@ import { boardDefault, generateWordSet } from "../Words";
 import React, { createContext, useEffect } from "react";
 import GameOver from "./GameOver";
 import { supabase } from "../supabaseClient";
-import { UserContext } from "../App";
+import { UserContext } from "../Contexts";
 
 export const AppContext = createContext();
 
-function Game({stage, setStage}) {
+const wordSet = [
+  "asset",
+  "audit",
+  "debit",
+  "grant",
+  "index",
+  "lease",
+  "limit",
+  "loans",
+  "offer",
+  "party",
+  "proxy",
+  "quote",
+  "score",
+  "stock",
+];
+
+function Game({ stage, setStage }) {
   const session = useContext(UserContext);
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letter: 0 });
-  const [wordSet, setWordSet] = useState(new Set());
-  const [correctWord, setCorrectWord] = useState("");
+  const [correctWord, setCorrectWord] = useState(wordSet[stage]);
   const [disabledLetters, setDisabledLetters] = useState([]);
   const [gameOver, setGameOver] = useState({
     gameOver: false,
@@ -28,23 +44,17 @@ function Game({stage, setStage}) {
   }
 
   function clearBoard() {
+    console.log("clearing board");
     const newBoard = [...board];
     setDisabledLetters([]);
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 5; j++) {
-      newBoard[i][j] = "";
-      setCurrAttempt({ attempt: 0, letter: 0 });
+        newBoard[i][j] = "";
+        setCurrAttempt({ attempt: 0, letter: 0 });
       }
     }
     setBoard(newBoard);
   }
-
-  useEffect(() => {
-    generateWordSet().then((words) => {
-      setWordSet(words.wordSet);
-      setCorrectWord(words.todaysWord);
-    });
-  }, []);
 
   async function saveFirstAttempt(answer, attempt, solved) {
     const { data, error } = await supabase
@@ -142,6 +152,19 @@ function Game({stage, setStage}) {
     }
   }
 
+  const nextStage = () => {
+    console.log("running nextStage");
+    if (gameOver.gameOver) {
+      setStage(stage + 1);
+      stage++;
+      setGameOver({ gameOver: false, guessedWord: false });
+      setCorrectWord(wordSet[stage]);
+      console.log("new correct word: " + correctWord);
+      clearBoard();
+      setCurrAttempt({ attempt: 0, letter: 0 });
+    }
+  };
+
   const onEnter = () => {
     if (currAttempt.letter !== 5) return;
 
@@ -150,25 +173,14 @@ function Game({stage, setStage}) {
       currWord += board[currAttempt.attempt][i];
     }
     setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
-    // if (wordSet.has(currWord.toLowerCase())) {
-    //   setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
-    // } else {
-    //   alert("Word not found");
-    //   return;
-    // }
 
     if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
-      setStage(stage + 1);
-      console.log("new stage: " + stage);
-      //return;
     }
     console.log(currAttempt);
     console.log(wordSet);
     if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
-      setStage(stage + 1);
-      //return;
     }
 
     switch (currAttempt.attempt) {
@@ -231,6 +243,7 @@ function Game({stage, setStage}) {
       <div className="game">
         <WordBoard />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+        <button onClick={nextStage}>Next</button>
         <button onClick={clearBoard} disabled={gameOver.gameOver}>
           Clear Board
         </button>
