@@ -15,11 +15,37 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <p>Hello</p>
+    <div className="App">
+    <nav>
+      <h1>Wordle</h1>
+    </nav>
+    <AppContext.Provider
+      value={{
+        board,
+        setBoard,
+        currAttempt,
+        setCurrAttempt,
+        correctWord,
+        onSelectLetter,
+        onDelete,
+        onEnter,
+        setDisabledLetters,
+        disabledLetters,
+        gameOver,
+      }}
+    >
+      <div className="game">
+        <WordBoard />
+        {gameOver.gameOver ? <GameOver /> : <Keyboard />}
       </div>
-    </>
+    </AppContext.Provider>
+  </div>
+    // <>
+    //   <div>
+    //     <p>Hello</p>
+    //   </div>
+    //   <Game />
+    // </>
   )
 }
 

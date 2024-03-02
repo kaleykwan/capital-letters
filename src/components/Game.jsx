@@ -3,7 +3,7 @@ import viteLogo from '/vite.svg'
 // import './App.css'
 import WordBoard from './WordBoard';
 import Keyboard from "./Keyboard";
-//import { boardDefault, generateWordSet } from "./Words";
+import { boardDefault, generateWordSet } from "../Words"
 import React, { createContext, useEffect } from "react";
 import GameOver from "./GameOver";
 
@@ -91,7 +91,7 @@ function Game() {
         }}
       >
         <div className="game">
-          <Board />
+          <WordBoard />
           {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         </div>
       </AppContext.Provider>
