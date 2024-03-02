@@ -148,3 +148,30 @@ nav h1 {
 #disabled {
   background-color: #3a393c;
 }
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+}
+
+.progress-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.progress-circle.completed {
+  background-color: #4caf50; /* Green color for completed circles */
+}
+
+.progress-line {
+  flex: 1;
+  height: 2px;
+  background-color: #ccc;
+}

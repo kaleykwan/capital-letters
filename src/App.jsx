@@ -5,6 +5,7 @@ import React, { createContext, useEffect } from "react";
 import Auth from "./pages/Auth";
 import { supabase } from "./supabaseClient";
 import { UserContext } from "./Contexts";
+import ProgressBar from "./components/ProgressBar";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -26,7 +27,9 @@ function App() {
         <nav>
           <h1>capital letters</h1>
         </nav>
-        <p>{stage}</p>
+        {/* <p>{stage}</p> */}
+        {/* <h1>Progress</h1> */}
+      <ProgressBar currentLevel={stage} />
         {!session ? <Auth /> : <Game stage={stage} setStage={setStage} />}
       </UserContext.Provider>
     </div>
