@@ -177,7 +177,7 @@ nav h1 {
   position: absolute;
   width: 65%;
   height: 3px;
-  background-color: #ccc;
+  background-color: black;
   top: 50%;
   /* left: calc(100%); */
   transform: translateX(-140%);
@@ -190,7 +190,8 @@ nav h1 {
 .progress-line {
   flex: 1;
   height: 2px;
-  background-color: #ccc;
+  color: 
+  background-color: black;
 }
 
 .button-row {
