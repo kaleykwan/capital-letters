@@ -5,8 +5,11 @@ Audit
 Debit
     Def: Debit is an accounting entry that results in either an increase in assets or a decrease in liabilities on a company's balance sheet. In double-entry bookkeeping, all debits are made on the left side of the ledger and must be offset with corresponding credits on the right side of the ledger.
 Grant
+    Def: A grant is a gift to an individual or a company that does not need to be paid back. Grants usually involve a three-phase lifecycle: pre-award, award, and post-award. Grants are considered income and thus subject to taxation, unless the law says otherwise.
 Index
+    Def: An index in measures the price performance of a basket of securities using a standardized metric and methodology. Indexes in financial markets are often used as benchmarks to evaluate an investment's performacne against.
 Lease
+    Def: 
 Limit
 Loans
 Offer
