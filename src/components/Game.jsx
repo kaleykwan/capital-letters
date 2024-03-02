@@ -27,6 +27,18 @@ function Game({stage, setStage}) {
     const { error } = await supabase.auth.signOut();
   }
 
+  function clearBoard() {
+    const newBoard = [...board];
+    setDisabledLetters([]);
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j < 5; j++) {
+      newBoard[i][j] = "";
+      setCurrAttempt({ attempt: 0, letter: 0 });
+      }
+    }
+    setBoard(newBoard);
+  }
+
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
@@ -223,6 +235,7 @@ function Game({stage, setStage}) {
       <div className="game">
         <WordBoard />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+        <button onClick={clearBoard}>Clear Board</button>
         <button onClick={signOut}>Logout</button>
       </div>
     </AppContext.Provider>
