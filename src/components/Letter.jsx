@@ -18,7 +18,7 @@ function Letter({ letterPos, attemptVal }) {
     }
   }, [currAttempt.attempt]);
   return (
-    <div className="letter" id={letterState}>
+    <div style={{borderColor: letterState == "correct" ? "#ff38d1" : letterState == "almost" ? "#fbb6f7" : letterState == "error" ? "#3a393c" : "black", color: "white"}} className="letter" id={letterState}>
       {letter}
     </div>
   );
