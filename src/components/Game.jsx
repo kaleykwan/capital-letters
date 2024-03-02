@@ -71,10 +71,10 @@ function Game() {
   };
 
   return (
-    <div className="App">
-      <nav>
-        <h1>Wordle</h1>
-      </nav>
+    // <div className="App">
+    //   <nav>
+    //     <h1>Wordle</h1>
+    //   </nav>
       <AppContext.Provider
         value={{
           board,
@@ -95,7 +95,7 @@ function Game() {
           {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         </div>
       </AppContext.Provider>
-    </div>
+    // </div>
   );
 }
 
