@@ -244,7 +244,7 @@ function Game({ stage, setStage }) {
         <WordBoard />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         <button onClick={() => nextStage()}>Next</button>
-        <button onClick={() => clearBoard} disabled={gameOver.gameOver}>
+        <button onClick={() => clearBoard()} disabled={gameOver.gameOver}>
           Clear Board
         </button>
         <button onClick={signOut}>Logout</button>
