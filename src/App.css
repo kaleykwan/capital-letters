@@ -187,12 +187,6 @@ nav h1 {
 .progress-circle:first-child::before {
   display: none; /* hide line before first circle */
 }
-.progress-line {
-  flex: 1;
-  height: 2px;
-  color: 
-  background-color: black;
-}
 
 .button-row {
   display: flex;
