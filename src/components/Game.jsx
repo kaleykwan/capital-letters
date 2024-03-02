@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
+import { useState } from "react";
+import viteLogo from "/vite.svg";
 // import './App.css'
-import WordBoard from './WordBoard';
+import WordBoard from "./WordBoard";
 import Keyboard from "./Keyboard";
-import { boardDefault, generateWordSet } from "../Words"
+import { boardDefault, generateWordSet } from "../Words";
 import React, { createContext, useEffect } from "react";
 import GameOver from "./GameOver";
-
+import { supabase } from "../supabaseClient";
 export const AppContext = createContext();
 
 function Game() {
@@ -26,6 +26,15 @@ function Game() {
       setCorrectWord(words.todaysWord);
     });
   }, []);
+
+  async function saveAttempt(answer, attempt, attemptNumber, solved) {
+    const { data, error } = await supabase.from("games").insert({
+      answer: answer,
+      attempt_1: attempt,
+    }).select();
+
+    console.log(error);
+  }
 
   const onEnter = () => {
     if (currAttempt.letter !== 5) return;
@@ -49,6 +58,7 @@ function Game() {
       setGameOver({ gameOver: true, guessedWord: false });
       return;
     }
+    saveAttempt(correctWord, currWord, currAttempt.attempt, gameOver);
   };
 
   const onDelete = () => {
@@ -75,26 +85,26 @@ function Game() {
     //   <nav>
     //     <h1>Wordle</h1>
     //   </nav>
-      <AppContext.Provider
-        value={{
-          board,
-          setBoard,
-          currAttempt,
-          setCurrAttempt,
-          correctWord,
-          onSelectLetter,
-          onDelete,
-          onEnter,
-          setDisabledLetters,
-          disabledLetters,
-          gameOver,
-        }}
-      >
-        <div className="game">
-          <WordBoard />
-          {gameOver.gameOver ? <GameOver /> : <Keyboard />}
-        </div>
-      </AppContext.Provider>
+    <AppContext.Provider
+      value={{
+        board,
+        setBoard,
+        currAttempt,
+        setCurrAttempt,
+        correctWord,
+        onSelectLetter,
+        onDelete,
+        onEnter,
+        setDisabledLetters,
+        disabledLetters,
+        gameOver,
+      }}
+    >
+      <div className="game">
+        <WordBoard />
+        {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+      </div>
+    </AppContext.Provider>
     // </div>
   );
 }
