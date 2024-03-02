@@ -10,6 +10,7 @@ export const UserContext = createContext();
 
 function App() {
   const [session, setSession] = useState(null);
+  const [stage, setStage] = useState(0);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -27,7 +28,8 @@ function App() {
         <nav>
           <h1>capital letters</h1>
         </nav>
-        {!session ? <Auth /> : <Game />}
+        <p>{stage}</p>
+        {!session ? <Auth /> : <Game stage={stage} setStage={setStage} />}
       </UserContext.Provider>
     </div>
   );

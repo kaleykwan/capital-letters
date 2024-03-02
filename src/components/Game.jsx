@@ -11,7 +11,7 @@ import { UserContext } from "../App";
 
 export const AppContext = createContext();
 
-function Game() {
+function Game({stage, setStage}) {
   const session = useContext(UserContext);
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letter: 0 });
@@ -147,12 +147,15 @@ function Game() {
 
     if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
+      setStage(stage + 1);
+      console.log("new stage: " + stage);
       //return;
     }
     console.log(currAttempt);
     console.log(wordSet);
     if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
+      setStage(stage + 1);
       //return;
     }
 
