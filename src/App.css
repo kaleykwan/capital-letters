@@ -3,8 +3,9 @@
   background-color: #ffb7ce;
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
+  /* height: 100%; */
   color: white;
+  overflow: auto;
 }
 
 body {
@@ -19,6 +20,7 @@ nav {
   border-bottom: 1px solid grey;
   display: grid;
   place-items: center;
+  /* overflow: 'scroll'; */
 }
 
 nav h1 {
@@ -51,10 +53,25 @@ nav h1 {
   margin: 5px;
 }
 
+.correct-word {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #ff38d1;
+  font-size: 40px;
+}
+
+.definition-style {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
 .letter {
   flex: 30%;
   /* height: 100%; */
-  height: 50px;
+  height: 45px;
   border: 1px solid grey;
   margin-right: 5px;
   margin-left: 5px;

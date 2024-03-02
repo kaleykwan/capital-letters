@@ -149,6 +149,7 @@ function Game() {
       //return;
     }
     console.log(currAttempt);
+    console.log(wordSet);
     if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
       //return;
