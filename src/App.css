@@ -182,3 +182,7 @@ nav h1 {
   display: flex;
   justify-content: space-between;
 }
+
+.button-row button {
+  margin-right: 10px;
+}
