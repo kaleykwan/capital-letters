@@ -6,12 +6,7 @@ async function getDefinition(word) {
   const { data, error } = await supabase.from("word-table")
   .select('definition')
   .eq('word', word)
-
-  //console.log(error);
-  //console.log(word)
-  //console.log(data);
   return data[0].definition;
-
 }
 
 function GameOver() {

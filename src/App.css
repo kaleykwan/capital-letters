@@ -166,12 +166,27 @@ nav h1 {
   align-items: center;
   margin: 0 10px;
   font-size: 18px;
+  position: relative; 
 }
 
 .progress-circle.completed {
   background-color: #750271;
 }
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 65%;
+  height: 3px;
+  background-color: #ccc;
+  top: 50%;
+  /* left: calc(100%); */
+  transform: translateX(-140%);
+  /* position: relative; */
+}
 
+.progress-circle:first-child::before {
+  display: none; /* hide line before first circle */
+}
 .progress-line {
   flex: 1;
   height: 2px;
