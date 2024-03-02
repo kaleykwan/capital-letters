@@ -1,32 +1,27 @@
-Asset: An asset is a resource with economic value that an individual, corporation, or country owns or controls with the expectation that it will provide a future benefit. Assets are reported on a company's balance sheet and they're classified as current, financial, and intangible. They are bought or created to increase a firm's value or benefit the firm's operation. 
-Audit: Audit refers to the review of financial statements. A financial audit is an objective examination and evaluation of the financial statements of an organization to make sure that the financial records are a fair and accurate represetnation of the transactions they claim to represent. 
-Debit
-    Def: Debit is an accounting entry that results in either an increase in assets or a decrease in liabilities on a company's balance sheet. In double-entry bookkeeping, all debits are made on the left side of the ledger and must be offset with corresponding credits on the right side of the ledger.
-Grant
-    Def: A grant is a gift to an individual or a company that does not need to be paid back. Grants usually involve a three-phase lifecycle: pre-award, award, and post-award. Grants are considered income and thus subject to taxation, unless the law says otherwise.
-Index
-    Def: An index in measures the price performance of a basket of securities using a standardized metric and methodology. Indexes in financial markets are often used as benchmarks to evaluate an investment's performacne against.
-Lease
-    Def: A lease is a contract outlining the terms which one part agrees to rent an asset. It guarantees the lessee, also known as the tent
-Limit
-Loans
-Offer
-Party
-Proxy
-Quote
-Score
-Stock
-Taxes
-Trade
-Trust
-Value
-Yield
-Bread
-Bucks
-Dough
-Grand
-Bills
-Bonds
-Sales
-Forex
-
+asset
+audit
+debit
+grant
+index
+lease
+limit
+loans
+offer
+party
+proxy
+quote
+score
+stock
+taxes
+trade
+trust
+value
+yield
+bread
+bucks
+dough
+grand
+bills
+bonds
+sales
+forex
