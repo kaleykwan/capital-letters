@@ -13,7 +13,6 @@ export const AppContext = createContext();
 
 function Game() {
   const session = useContext(UserContext);
-  console.log("user: " + session.user.id);
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letter: 0 });
   const [wordSet, setWordSet] = useState(new Set());
@@ -144,9 +143,9 @@ function Game() {
       alert("Word not found");
     }
 
-    if (currWord === correctWord) {
+    if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
-      return;
+      //return;
     }
     console.log(currAttempt);
     if (currAttempt.attempt === 5) {
