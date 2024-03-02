@@ -12,16 +12,3 @@ proxy
 quote
 score
 stock
-taxes
-trade
-trust
-value
-yield
-bread
-bucks
-dough
-grand
-bills
-bonds
-sales
-forex
