@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import viteLogo from "/vite.svg";
 // import './App.css'
 import WordBoard from "./WordBoard";
@@ -7,9 +7,13 @@ import { boardDefault, generateWordSet } from "../Words";
 import React, { createContext, useEffect } from "react";
 import GameOver from "./GameOver";
 import { supabase } from "../supabaseClient";
+import { UserContext } from "../App";
+
 export const AppContext = createContext();
 
 function Game() {
+  const user = useContext(UserContext);
+  console.log(user);
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letter: 0 });
   const [wordSet, setWordSet] = useState(new Set());
@@ -29,6 +33,7 @@ function Game() {
 
   async function saveAttempt(answer, attempt, attemptNumber, solved) {
     const { data, error } = await supabase.from("games").insert({
+      user_id: user.id,
       answer: answer,
       attempt_1: attempt,
     }).select();
