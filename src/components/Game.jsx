@@ -24,6 +24,10 @@ function Game() {
     guessedWord: false,
   });
 
+  async function signOut() {
+    const { error } = await supabase.auth.signOut()
+  }
+
   useEffect(() => {
     generateWordSet().then((words) => {
       setWordSet(words.wordSet);
@@ -108,6 +112,9 @@ function Game() {
       <div className="game">
         <WordBoard />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+        <button onClick={signOut}>
+          Logout
+        </button>
       </div>
     </AppContext.Provider>
     // </div>
