@@ -12,20 +12,20 @@ import { UserContext } from "../Contexts";
 export const AppContext = createContext();
 
 const wordSet = [
-  "asset",
-  "audit",
-  "debit",
   "grant",
-  "index",
-  "lease",
-  "limit",
-  "loans",
-  "offer",
   "party",
-  "proxy",
+  "stock",
+  "offer",
+  "lease",
+  "asset",
+  "debit",
+  "loans",
   "quote",
   "score",
-  "stock",
+  "proxy",
+  "index",
+  "audit",
+  "limit",
 ];
 
 function Game({ stage, setStage }) {
