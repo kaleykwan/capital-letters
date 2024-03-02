@@ -47,8 +47,8 @@ function Game({ stage, setStage }) {
     console.log("clearing board");
     const newBoard = [...board];
     setDisabledLetters([]);
-    for (let i = 0; i < 5; i++) {
-      for (let j = 0; j < 5; j++) {
+    for (let i = 0; i <= 5; i++) {
+      for (let j = 0; j <= 5; j++) {
         newBoard[i][j] = "";
         setCurrAttempt({ attempt: 0, letter: 0 });
       }
