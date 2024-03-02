@@ -246,10 +246,10 @@ function Game({ stage, setStage }) {
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         <div className="button-row">
           <button
+            style={{ backgroundColor: "black", color: "white" }}
             tabIndex="-1"
             type="button"
             onClick={(e) => {
-              // e.preventDefault();
               e.currentTarget.blur();
               nextStage();
             }}
@@ -257,9 +257,9 @@ function Game({ stage, setStage }) {
             Next
           </button>
           <button
+            style={{ backgroundColor: "black", color: "white" }}
             type="button"
             onClick={(e) => {
-              // e.preventDefault();
               e.currentTarget.blur();
               clearBoard();
             }}
@@ -267,7 +267,14 @@ function Game({ stage, setStage }) {
           >
             Clear Board
           </button>
-          <button type="button" onClick={signOut}>
+          <button
+            style={{ backgroundColor: "black", color: "white" }}
+            type="button"
+            onClick={(e) => {
+              e.currentTarget.blur();
+              signOut();
+            }}
+          >
             Logout
           </button>
         </div>
