@@ -155,8 +155,9 @@ function Game({ stage, setStage }) {
   const nextStage = () => {
     console.log("running nextStage");
     if (gameOver.gameOver) {
-      setStage(stage + 1);
+      setStage((stage) => stage + 1);
       stage++;
+      console.log("new stage: " + stage);
       setGameOver({ gameOver: false, guessedWord: false });
       setCorrectWord(wordSet[stage]);
       console.log("new correct word: " + correctWord);
@@ -177,8 +178,8 @@ function Game({ stage, setStage }) {
     if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
     }
-    console.log(currAttempt);
-    console.log(wordSet);
+    //console.log(currAttempt);
+    //console.log(wordSet);
     if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
     }
@@ -244,11 +245,31 @@ function Game({ stage, setStage }) {
         <WordBoard />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         <div className="button-row">
-        <button onClick={() => nextStage()}>Next</button>
-        <button onClick={() => clearBoard()} disabled={gameOver.gameOver}>
-          Clear Board
-        </button>
-        <button onClick={signOut}>Logout</button>
+          <button
+            tabIndex="-1"
+            type="button"
+            onClick={(e) => {
+              // e.preventDefault();
+              e.currentTarget.blur();
+              nextStage();
+            }}
+          >
+            Next
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              // e.preventDefault();
+              e.currentTarget.blur();
+              clearBoard();
+            }}
+            disabled={gameOver.gameOver}
+          >
+            Clear Board
+          </button>
+          <button type="button" onClick={signOut}>
+            Logout
+          </button>
         </div>
       </div>
     </AppContext.Provider>
