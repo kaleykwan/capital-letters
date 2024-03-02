@@ -28,7 +28,6 @@ function App() {
           <h1>capital letters</h1>
         </nav>
         {/* <p>{stage}</p> */}
-        {/* <h1>Progress</h1> */}
       <ProgressBar currentLevel={stage} />
         {!session ? <Auth /> : <Game stage={stage} setStage={setStage} />}
       </UserContext.Provider>
