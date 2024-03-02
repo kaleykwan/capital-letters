@@ -7,7 +7,7 @@ function ProgressBar({ currentLevel }) {
   return (
     <div className="progress-bar">
       {levels.map((level) => (
-        <div style={{color: level <= currentLevel ? "white" : "black"}}key={level} className={`progress-circle ${level <= currentLevel ? 'completed' : ''}`}>
+        <div style={{color: level <= currentLevel ? "white" : "black", borderColor: level <= currentLevel ? "#ff38d1" : "black"}}key={level} className={`progress-circle ${level <= currentLevel ? 'completed' : ''}`}>
           {/* {level <= currentLevel ? <span>{level}</span> : level} */}
           {level}
         </div>
