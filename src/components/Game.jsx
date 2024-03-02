@@ -137,6 +137,7 @@ function Game() {
     for (let i = 0; i < 5; i++) {
       currWord += board[currAttempt.attempt][i];
     }
+    setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
     // if (wordSet.has(currWord.toLowerCase())) {
     //   setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
     // } else {
