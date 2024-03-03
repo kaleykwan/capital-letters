@@ -53,6 +53,7 @@ export default function SignIn() {
                 borderRadius: '5px', // Add border radius
                 backgroundColor: '#fff', // Set background color to white
                 marginBottom: '10px',
+                color: 'black',
               }}
             />
           </div>
@@ -71,6 +72,7 @@ export default function SignIn() {
                 borderRadius: '5px', // Add border radius
                 backgroundColor: '#fff', // Set background color to white
                 marginBottom: '10px',
+                color: 'black',
               }}
             />
           </div>
@@ -92,7 +94,7 @@ export default function SignIn() {
             <p className="description" onClick={() => navigate(RoutePaths.AUTH)}>
             <Link to={() => navigate(RoutePaths.AUTH)} 
                 style={{
-                  color: 'black', 
+                  color: 'grey', 
                   fontSize: '14px', 
                   textDecoration: 'none',
                 }}
