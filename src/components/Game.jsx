@@ -13,7 +13,7 @@ import { RoutePaths } from "../RoutePaths";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export const AppContext = createContext();
 
@@ -369,26 +369,7 @@ function Game({ kingdom, stage, setStage }) {
           <FontAwesomeIcon icon={faArrowRightFromBracket} />
            </div>
         <div className="button-row">
-          <button
-            style={{ backgroundColor: "black", color: "white" }}
-            type="button"
-            onClick={(e) => {
-              e.currentTarget.blur();
-              nextStage();
-            }}
-          >
-            next
-          </button>
-          {/* <button
-            style={{ backgroundColor: "black", color: "white" }}
-            type="button"
-            onClick={(e) => {
-              e.currentTarget.blur();
-              signOut();
-            }}
-          >
-            Logout
-          </button> */}
+         
           <button
             style={{ backgroundColor: "black", color: "white" }}
             type="button"
@@ -399,6 +380,16 @@ function Game({ kingdom, stage, setStage }) {
             }}
           >
             back to map
+          </button>
+          <button
+            style={{ backgroundColor: "black", color: "white"}}
+            type="button"
+            onClick={(e) => {
+              e.currentTarget.blur();
+              nextStage();
+            }}
+          >
+            next
           </button>
         </div>
       </div>

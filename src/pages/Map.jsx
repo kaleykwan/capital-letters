@@ -21,6 +21,7 @@ const navigate = useNavigate();
 
   return (
     <div className="map-container">
+        
         <div className="logout-button" 
           onClick={(e) => {
             e.currentTarget.blur();

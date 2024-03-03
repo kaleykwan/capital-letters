@@ -79,15 +79,19 @@ export default function SignIn() {
           <div>
             <button className={"button block"} disabled={loading}
             style={{
-                backgroundColor: '#000000', /* Set the default background color */
-                color: '#ffffff', /* Set the default text color */
-                border: 'none', /* Remove border */
-                padding: '10px 20px', /* Add padding */
-                borderRadius: '20px', /* Add border radius */
-                cursor: 'pointer', /* Change cursor to pointer */
+                backgroundColor: '#000000',
+                color: '#ffffff',
+                border: 'none',
+                padding: '10px 20px', 
+                borderRadius: '20px', 
+                cursor: 'pointer',
               }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#ff38d1'} /* Change background color on hover */
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#000000'}
+                onMouseEnter={(e) =>{ e.target.style.backgroundColor = '#ff38d1';
+                // e.target.style.color = '#ff38d1';
+            } } 
+                onMouseLeave={(e) => {e.target.style.backgroundColor = '#000000';
+                // e.target.style.color = '#000000';
+            }}
                 >
               {loading ? <span>loading</span> : <span>sign in</span>}
             </button>
