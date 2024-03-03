@@ -84,11 +84,11 @@ export default function Auth() {
               required={true}
               onChange={(e) => setSignUpPassword(e.target.value)}
               style={{
-                width: "20%", // Make the input box full width
-                padding: "10px", // Add some padding
-                border: "1px solid #ccc", // Add a border
-                borderRadius: "15px", // Add border radius
-                backgroundColor: "#fff", // Set background color to white
+                width: "20%",
+                padding: "10px",
+                border: "1px solid #ccc",
+                borderRadius: "15px",
+                backgroundColor: "#fff",
                 marginBottom: "10px",
                 color: "black",
               }}
