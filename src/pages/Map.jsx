@@ -3,6 +3,7 @@ import React from "react";
 import "../App.css"; // Import your CSS file for styling
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../RoutePaths";
+import fantasy_map from "../assets/fantasy_map.jpeg";
 
 function Map() {
 //   const history = useHistory();
