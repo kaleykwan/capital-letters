@@ -66,35 +66,31 @@ export default function SignIn() {
               required={true}
               onChange={(e) => setSignInPassword(e.target.value)}
               style={{ 
-                width: '20%', // Make the input box full width
-                padding: '10px', // Add some padding
-                border: '1px solid #ccc', // Add a border
-                borderRadius: '15px', // Add border radius
-                backgroundColor: '#fff', // Set background color to white
+                width: '20%',
+                padding: '10px',
+                border: '1px solid #ccc',
+                borderRadius: '15px',
+                backgroundColor: '#fff',
                 marginBottom: '10px',
                 color: 'black',
               }}
             />
           </div>
-          <div>
-            <button className={"button block"} disabled={loading}
+          <div >
+            <div className={"signin-button"}>
+            <button className={"button block"} type="button" disabled={loading}
+            onClick={handleLogin}
             style={{
-                backgroundColor: '#000000',
                 color: '#ffffff',
                 border: 'none',
                 padding: '10px 20px', 
                 borderRadius: '20px', 
                 cursor: 'pointer',
               }}
-                onMouseEnter={(e) =>{ e.target.style.backgroundColor = '#ff38d1';
-                // e.target.style.color = '#ff38d1';
-            } } 
-                onMouseLeave={(e) => {e.target.style.backgroundColor = '#000000';
-                // e.target.style.color = '#000000';
-            }}
                 >
               {loading ? <span>loading</span> : <span>sign in</span>}
             </button>
+            </div>
             <p className="description" onClick={() => navigate(RoutePaths.AUTH)}>
             <Link to={() => navigate(RoutePaths.AUTH)} 
                 style={{

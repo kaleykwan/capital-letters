@@ -214,6 +214,22 @@ nav h1 {
   display: none; /* hide line before first circle */
 }
 
+.signin-button {
+  display: flex;
+  justify-content: center;
+}
+
+.signin-button button {
+  background-color: #000000;
+  color: white;
+
+}
+
+.signin-button button:hover {
+  background-color: #ff38d1;
+  color: white;
+}
+
 .button-row {
   display: flex;
   justify-content: space-between;
@@ -221,6 +237,10 @@ nav h1 {
 
 .button-row button {
   margin-right: 10px;
+}
+
+.button-row button:hover {
+  background-color: #ff38d1;
 }
 
 /* .map-container {

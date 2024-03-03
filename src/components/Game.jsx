@@ -376,7 +376,6 @@ function Game({ kingdom, stage, setStage }) {
           <FontAwesomeIcon icon={faArrowRightFromBracket} />
            </div>
         <div className="button-row">
-         
           <button
             style={{ backgroundColor: "black", color: "white" }}
             type="button"
