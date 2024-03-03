@@ -29,13 +29,13 @@ const navigate = useNavigate();
           }}>
           <FontAwesomeIcon icon={faArrowRightFromBracket} />
            </div>
-      <div className="circle" onClick={() => handleCircleClick(1)}>1</div>
-      <div className="circle" onClick={() => handleCircleClick(2)}>2</div>
-      <div className="circle" onClick={() => handleCircleClick(3)}>3</div>
-      <div className="circle" onClick={() => handleCircleClick(4)}>4</div>
-      <div className="circle" onClick={() => handleCircleClick(5)}>5</div>
-      <div className="circle" onClick={() => handleCircleClick(6)}>6</div>
-      <div className="circle" onClick={() => handleCircleClick(7)}>7</div>
+      <div className="circle" onClick={() => handleCircleClick(1)}>Starter</div>
+      <div className="circle" onClick={() => handleCircleClick(2)}>Invest</div>
+      <div className="circle" onClick={() => handleCircleClick(3)}>Bank</div>
+      <div className="circle" onClick={() => handleCircleClick(4)}>Stock</div>
+      <div className="circle" onClick={() => handleCircleClick(5)}>Account</div>
+      <div className="circle" onClick={() => handleCircleClick(6)}>Insurance</div>
+      <div className="circle" onClick={() => handleCircleClick(7)}>Taxation</div>
     </div>
   );
 }

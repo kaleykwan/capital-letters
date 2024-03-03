@@ -258,16 +258,17 @@ nav h1 {
   background-size: 103% 105%;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.5;
+  opacity: 0.8;
   background-blend-mode: overlay;
   /* background-color: rgba(255, 119, 194, 0.3);  */
 }
 
 .circle {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  /* width: 100px; */
+  padding: 10px;
+  /* height: 60px; */
+  border-radius: 25px;
   background-color: #fbb6f7; /* Set the background color of the circles */
   color: white; /* Set the text color of the circles */
   display: flex;
@@ -280,10 +281,10 @@ nav h1 {
   background-color: #f723d4; /* Set the brighter/darker pink color on hover */
 }
 
-.circle:nth-child(2) { top: 10%; left: 40%; }
-.circle:nth-child(3) { top: 25%; left: 55%; }
-.circle:nth-child(4) { top: 40%; left: 30%; }
-.circle:nth-child(5) { top: 55%; left: 40%; }
-.circle:nth-child(6) { top: 55%; left: 70%; }
-.circle:nth-child(7) { top: 70%; left: 60%; }
-.circle:nth-child(8) { top: 75%; left: 40%; }
+.circle:nth-child(2) { top: 10%; left: 50%; }
+.circle:nth-child(3) { top: 30%; left: 75%; }
+.circle:nth-child(4) { top: 30%; left: 30%; }
+.circle:nth-child(5) { top: 50%; left: 25%; }
+.circle:nth-child(6) { top: 65%; left: 80%; }
+.circle:nth-child(7) { top: 80%; left: 60%; }
+.circle:nth-child(8) { top: 75%; left: 30%; }
