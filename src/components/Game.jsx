@@ -89,7 +89,6 @@ const kingdoms = [
 function Game({ kingdom, stage, setStage }) {
   const navigate = useNavigate();
   const wordSet = kingdoms[kingdom];
-  console.log("game stage: " + stage);
 
   const session = useContext(UserContext);
   const [board, setBoard] = useState(boardDefault);
@@ -290,7 +289,6 @@ function Game({ kingdom, stage, setStage }) {
       setGameOver({ gameOver: false, guessedWord: false });
       setCorrectWord(wordSet[stage]);
       console.log("new correct word: " + correctWord);
-      // clearBoard();
       setCurrAttempt({ attempt: 0, letter: 0 });
       saveStage();
       if (stage === wordSet.length) {
@@ -310,8 +308,7 @@ function Game({ kingdom, stage, setStage }) {
 
     if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
-    }
-    if (currAttempt.attempt === 5) {
+    } else if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
     }
 
