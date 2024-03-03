@@ -14,8 +14,8 @@ export default function Kingdom({ stage, setStage }) {
       <nav>
         <h1>capital letters</h1>
       </nav>
-      <ProgressBar currentLevel={stage} />
-      <Game kingdom={name} stage={stage} setStage={setStage} />
+      <ProgressBar kingdom={name} currentLevel={stage} />
+      <Game kingdom={name-1} stage={stage} setStage={setStage} />
     </div>
   );
 }

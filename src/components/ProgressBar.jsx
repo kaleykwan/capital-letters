@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-function ProgressBar({ currentLevel }) {
+function ProgressBar({ kingdom, currentLevel }) {
   const levels = Array.from({ length: 14 }, (_, index) => index + 1);
 
   return (
