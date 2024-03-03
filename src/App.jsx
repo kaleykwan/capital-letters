@@ -6,6 +6,7 @@ import Auth from "./pages/Auth";
 import { supabase } from "./supabaseClient";
 import { UserContext } from "./Contexts";
 import ProgressBar from "./components/ProgressBar";
+import Kingdom from "./pages/Kingdom";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -24,12 +25,7 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={session}>
-        <nav>
-          <h1>capital letters</h1>
-        </nav>
-        {/* <p>{stage}</p> */}
-      <ProgressBar currentLevel={stage} />
-        {!session ? <Auth /> : <Game stage={stage} setStage={setStage} />}
+        {!session ? <Auth /> : <Kingdom stage={stage} setStage={setStage} />}
       </UserContext.Provider>
     </div>
   );
