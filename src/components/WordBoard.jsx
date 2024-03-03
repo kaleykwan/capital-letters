@@ -8,32 +8,32 @@ function WordBoard({ wordLength }) {
       {" "}
       <div className="row">
         {input.map((i) => {
-          return <Letter letterPos={i} attemptVal={0} />;
+          return <Letter letterPos={i+1} attemptVal={0} />;
         })}
       </div>
       <div className="row">
         {input.map((i) => {
-          return <Letter letterPos={i} attemptVal={1} />;
+          return <Letter letterPos={i+1} attemptVal={1} />;
         })}
       </div>
       <div className="row">
         {input.map((i) => {
-          return <Letter letterPos={i} attemptVal={2} />;
+          return <Letter letterPos={i+1} attemptVal={2} />;
         })}
       </div>
       <div className="row">
         {input.map((i) => {
-          return <Letter letterPos={i} attemptVal={3} />;
+          return <Letter letterPos={i+1} attemptVal={3} />;
         })}
       </div>
       <div className="row">
         {input.map((i) => {
-          return <Letter letterPos={i} attemptVal={4} />;
+          return <Letter letterPos={i+1} attemptVal={4} />;
         })}
       </div>
       <div className="row">
         {input.map((i) => {
-          return <Letter letterPos={i} attemptVal={5} />;
+          return <Letter letterPos={i+1} attemptVal={5} />;
         })}
       </div>
     </div>

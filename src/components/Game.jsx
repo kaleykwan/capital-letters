@@ -12,9 +12,9 @@ import { UserContext } from "../Contexts";
 export const AppContext = createContext();
 
 const wordSet = [
-  "grant",
-  "party",
-  "stock",
+  "grants",
+  "partyy",
+  "stocks",
   "offer",
   "lease",
   "asset",
@@ -167,10 +167,10 @@ function Game({ stage, setStage }) {
   };
 
   const onEnter = () => {
-    if (currAttempt.letter !== 5) return;
+    if (currAttempt.letter !== correctWord.length) return;
 
     let currWord = "";
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < correctWord.length; i++) {
       currWord += board[currAttempt.attempt][i];
     }
     setCurrAttempt({ attempt: currAttempt.attempt + 1, letter: 0 });
@@ -178,8 +178,6 @@ function Game({ stage, setStage }) {
     if (currWord.toLowerCase() === correctWord) {
       setGameOver({ gameOver: true, guessedWord: true });
     }
-    //console.log(currAttempt);
-    //console.log(wordSet);
     if (currAttempt.attempt === 5) {
       setGameOver({ gameOver: true, guessedWord: false });
     }
@@ -215,7 +213,7 @@ function Game({ stage, setStage }) {
   };
 
   const onSelectLetter = (key) => {
-    if (currAttempt.letter > 4) return;
+    if (currAttempt.letter > (correctWord.length - 1)) return;
     const newBoard = [...board];
     newBoard[currAttempt.attempt][currAttempt.letter] = key;
     setBoard(newBoard);
@@ -242,12 +240,11 @@ function Game({ stage, setStage }) {
       }}
     >
       <div className="game">
-        <WordBoard wordLength={correctWord.length + 1}/>
+        <WordBoard wordLength={correctWord.length}/>
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         <div className="button-row">
           <button
             style={{ backgroundColor: "black", color: "white" }}
-            tabIndex="-1"
             type="button"
             onClick={(e) => {
               e.currentTarget.blur();
