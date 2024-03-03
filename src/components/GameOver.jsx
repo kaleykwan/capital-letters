@@ -31,7 +31,7 @@ function GameOver() {
 
   return (
     <div className="gameOver">
-      <h3>
+      <h3  style={{ color: "black" }}>
         {gameOver.guessedWord
           ? "you correctly guessed the capital letters"
           : "you failed to guess the capital letters"}

@@ -8,6 +8,8 @@ import React, { createContext, useEffect } from "react";
 import GameOver from "./GameOver";
 import { supabase } from "../supabaseClient";
 import { UserContext } from "../Contexts";
+import { useNavigate } from "react-router-dom";
+import { RoutePaths } from "../RoutePaths";
 
 export const AppContext = createContext();
 
@@ -29,6 +31,8 @@ const wordSet = [
 ];
 
 function Game({ stage, setStage }) {
+  const navigate = useNavigate();
+
   const session = useContext(UserContext);
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letter: 0 });
@@ -41,6 +45,8 @@ function Game({ stage, setStage }) {
 
   async function signOut() {
     const { error } = await supabase.auth.signOut();
+    navigate(RoutePaths.AUTH);
+
   }
 
   function clearBoard() {
@@ -269,7 +275,7 @@ function Game({ stage, setStage }) {
             type="button"
             onClick={(e) => {
               e.currentTarget.blur();
-              signOut();
+              signOut(); 
             }}
           >
             Logout

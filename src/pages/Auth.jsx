@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
-import { RoutePaths } from "../routePaths";
+import { RoutePaths } from "../RoutePaths";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -28,7 +28,9 @@ export default function Auth() {
     if (error) {
       alert(error.error_description || error.message);
     } else {
-      navigate(RoutePaths.HOME);
+      // navigate(RoutePaths.HOME);
+      navigate(RoutePaths.MAP);
+
     }
     setLoading(false);
   };
@@ -45,7 +47,9 @@ export default function Auth() {
     if (error) {
       alert(error.error_description || error.message);
     } else {
-      navigate(RoutePaths.HOME);
+      // navigate(RoutePaths.HOME);
+      navigate(RoutePaths.MAP);
+
     }
     setLoading(false);
   };

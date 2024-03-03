@@ -199,3 +199,32 @@ nav h1 {
 .button-row button {
   margin-right: 10px;
 }
+
+.map-container {
+  position: relative;
+  width: 100%; /* Adjust the width of the map container */
+  height: 100vh; /* Adjust the height of the map container */
+  background-color: #f0f0f0; /* Set the background color of the map */
+}
+
+.circle {
+  position: absolute;
+  width: 60px; /* Adjust the width of the circles */
+  height: 60px; /* Adjust the height of the circles */
+  border-radius: 50%;
+  background-color: #007bff; /* Set the background color of the circles */
+  color: white; /* Set the text color of the circles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px; /* Adjust the font size of the text inside the circles */
+  cursor: pointer;
+}
+
+/* Randomly position the circles */
+.circle:nth-child(1) { top: 10%; left: 40%; }
+.circle:nth-child(2) { top: 25%; left: 55%; }
+.circle:nth-child(3) { top: 40%; left: 35%; }
+.circle:nth-child(4) { top: 55%; left: 45%; }
+.circle:nth-child(5) { top: 65%; left: 70%; }
+.circle:nth-child(6) { top: 85%; left: 60%; }
