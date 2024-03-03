@@ -54,7 +54,7 @@ export default function Auth() {
                 width: '20%', // Make the input box full width
                 padding: '10px', // Add some padding
                 border: '1px solid #ccc', // Add a border
-                borderRadius: '5px', // Add border radius
+                borderRadius: '15px', // Add border radius
                 backgroundColor: '#fff', // Set background color to white
                 marginBottom: '10px',
                 color: 'black',
@@ -73,7 +73,7 @@ export default function Auth() {
                 width: '20%', // Make the input box full width
                 padding: '10px', // Add some padding
                 border: '1px solid #ccc', // Add a border
-                borderRadius: '5px', // Add border radius
+                borderRadius: '15px', // Add border radius
                 backgroundColor: '#fff', // Set background color to white
                 marginBottom: '10px',
                 color: 'black',
@@ -87,7 +87,7 @@ export default function Auth() {
               color: '#ffffff', /* Set the default text color */
               border: 'none', /* Remove border */
               padding: '10px 20px', /* Add padding */
-              borderRadius: '5px', /* Add border radius */
+              borderRadius: '20px', /* Add border radius */
               cursor: 'pointer', /* Change cursor to pointer */
             }}
               onMouseEnter={(e) => e.target.style.backgroundColor = '#ff38d1'} /* Change background color on hover */
