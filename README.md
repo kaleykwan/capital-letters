@@ -1,8 +1,6 @@
-# React + Vite
+# About
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Capital Letters: the word-gamification of financial literacy and education. Embark on an adventure through various “kingdoms” and solve word puzzles to learn the language of finance. Our web app aims to tackle the gender gap in financial literacy and education by making it into an adventure word game inspired by the popular New York Times game Wordle.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Stack
+React-Vite-Supabase
