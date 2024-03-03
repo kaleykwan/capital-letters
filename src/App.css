@@ -37,7 +37,9 @@ nav {
 
 nav h1 {
   margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
+  font-family: "Libre Baskerville", serif; /* Set the font to Luminari */
+
   color: black;
   font-size: 45px;
 }
@@ -51,6 +53,7 @@ nav h1 {
 }
 .logout-button {
   position: absolute;
+  /* z-index: 1; */
   top: 30px; /* Adjust as needed */
   right: 50px; /* Adjust as needed */
   cursor: pointer;
@@ -241,20 +244,19 @@ nav h1 {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #007bff; /* Set the background color of the circles */
+  background-color: #fbb6f7; /* Set the background color of the circles */
   color: white; /* Set the text color of the circles */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px; /* Adjust the font size of the text inside the circles */
+  font-size: 28px; /* Adjust the font size of the text inside the circles */
   cursor: pointer;
 }
 
-/* Randomly position the circles */
-.circle:nth-child(1) { top: 10%; left: 40%; }
-.circle:nth-child(2) { top: 25%; left: 55%; }
-.circle:nth-child(3) { top: 40%; left: 30%; }
-.circle:nth-child(4) { top: 55%; left: 45%; }
-.circle:nth-child(5) { top: 65%; left: 70%; }
-.circle:nth-child(6) { top: 75%; left: 60%; }
-.circle:nth-child(7) { top: 85%; left: 40%; }
+.circle:nth-child(2) { top: 10%; left: 40%; }
+.circle:nth-child(3) { top: 25%; left: 55%; }
+.circle:nth-child(4) { top: 40%; left: 30%; }
+.circle:nth-child(5) { top: 55%; left: 45%; }
+.circle:nth-child(6) { top: 65%; left: 70%; }
+.circle:nth-child(7) { top: 75%; left: 60%; }
+.circle:nth-child(8) { top: 85%; left: 40%; }

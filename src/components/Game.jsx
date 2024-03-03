@@ -377,7 +377,7 @@ function Game({ kingdom, stage, setStage }) {
               nextStage();
             }}
           >
-            Next
+            next
           </button>
           {/* <button
             style={{ backgroundColor: "black", color: "white" }}
@@ -398,7 +398,7 @@ function Game({ kingdom, stage, setStage }) {
               navigate(RoutePaths.MAP);
             }}
           >
-            Back to map
+            back to map
           </button>
         </div>
       </div>
