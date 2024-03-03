@@ -1,8 +1,18 @@
 import React from "react";
 import "../App.css";
 
+const kingdoms = [
+  ['accounting', 'invest', 'capital'],
+  ['stock', 'equity', 'dividend', 'bond', 'mutual', 'securities', 'portfolio', 'yield', 'venture'],
+  ['atm', 'cash', 'loan', 'bank', 'credit', 'deposit', 'savings', 'mortgage', 'interest', 'withdraw', 'overdraft'],
+  ['exchange', 'commodity', 'bull', 'derivative', 'options', 'forex', 'index', 'ipo', 'crypto'],
+  ['tax', 'audit', 'balance', 'journal', 'fiscal', 'gaap', 'ledger', 'depreciate'],
+  ['risk', 'loss', 'claim', 'premium', 'policy', 'coverage', 'liability', 'insolvent'],
+  ['irs', 'haven', 'levy', 'income', 'deduction', 'exemption', 'shelter', 'compliance']
+];
+
 function ProgressBar({ kingdom, currentLevel }) {
-  const levels = Array.from({ length: 14 }, (_, index) => index + 1);
+  const levels = Array.from({ length: kingdoms[kingdom-1].length }, (_, index) => index + 1);
 
   return (
     <div className="progress-bar">
