@@ -62,7 +62,7 @@ nav h1 {
 }
 
 .board {
-  width: 320px;
+  /* width: 320px; */
   height: 550px;
   /* border: 1px solid black; */
   display: flex;
@@ -92,8 +92,8 @@ nav h1 {
 }
 
 .letter {
-  flex: 30%;
-  /* height: 100%; */
+  /* flex: 30%; */
+  width: 40px;
   height: 45px;
   border: 1px solid #919191;
   margin-right: 3px;

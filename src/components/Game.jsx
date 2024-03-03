@@ -383,6 +383,7 @@ function Game({ kingdom, stage, setStage }) {
               e.currentTarget.blur();
               saveStage();
               navigate(RoutePaths.MAP);
+              clearBoard(correctWord.length);
             }}
           >
             back to map
