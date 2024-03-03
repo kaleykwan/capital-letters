@@ -69,7 +69,7 @@ export default function Auth() {
             <p
               className="description"
               style={{ color: "black", cursor: "pointer" }}
-              onClick={navigate(RoutePaths.SIGNIN)}
+              onClick={() => navigate(RoutePaths.SIGNIN)}
             >
                <Link to={() => navigate(RoutePaths.SIGNIN)}>already have an account? sign in</Link>
     

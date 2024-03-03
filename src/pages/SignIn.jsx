@@ -62,7 +62,7 @@ export default function SignIn() {
             <button className={"button block"} disabled={loading}>
               {loading ? <span>Loading</span> : <span>Sign In</span>}
             </button>
-            <p className="description" style={{color: 'black'}}>
+            <p className="description" style={{color: 'black'}} onClick={() => navigate(RoutePaths.AUTH)}>
             <Link to={() => navigate(RoutePaths.AUTH)}>don't have an account? sign up</Link>
                 </p>
           </div>
