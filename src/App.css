@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: white;
+  background-color: #f6f5f7;
   width: 100vw;
   height: 100vh;
   /* height: 100%; */
@@ -210,7 +210,7 @@ nav h1 {
   position: relative;
   width: 100%; /* Adjust the width of the map container */
   height: 100vh; /* Adjust the height of the map container */
-  background-image: url('./assets/fantasy_map.jpeg');
+  /* background-image: url('./assets/fantasy_map.jpeg'); */
   background-size: cover; /* Cover the entire container with the background image */
   background-repeat: no-repeat; /* Prevent the background image from repeating */
   background-position: center; /* Center the background image */
@@ -218,8 +218,8 @@ nav h1 {
 
 .circle {
   position: absolute;
-  width: 60px; /* Adjust the width of the circles */
-  height: 60px; /* Adjust the height of the circles */
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: #007bff; /* Set the background color of the circles */
   color: white; /* Set the text color of the circles */
