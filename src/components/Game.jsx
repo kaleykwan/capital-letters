@@ -89,6 +89,7 @@ const kingdoms = [
 function Game({ kingdom, stage, setStage }) {
   const navigate = useNavigate();
   const wordSet = kingdoms[kingdom];
+  console.log("game stage: " + stage);
 
   const session = useContext(UserContext);
   const [board, setBoard] = useState(boardDefault);
@@ -99,6 +100,11 @@ function Game({ kingdom, stage, setStage }) {
     gameOver: false,
     guessedWord: false,
   });
+
+  useEffect(() => {
+    setCorrectWord(wordSet[stage]);
+    console.log(correctWord);
+  }, [stage]);
 
   async function saveStage() {
     console.log("saving stage");
@@ -383,6 +389,7 @@ function Game({ kingdom, stage, setStage }) {
             onClick={(e) => {
               e.currentTarget.blur();
               saveStage();
+              console.log("navigating back to map")
               navigate(RoutePaths.MAP);
               clearBoard(correctWord.length);
             }}

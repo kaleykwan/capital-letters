@@ -65,7 +65,6 @@ export default function Kingdom() {
   useEffect(() => {
     (async () => {
       setStage(await getStage(name, session));
-      console.log("stage: " + stage);
     })();
   }, []);
   console.log("kingdom: " + name);
