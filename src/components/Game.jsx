@@ -10,10 +10,10 @@ import { supabase } from "../supabaseClient";
 import { UserContext } from "../Contexts";
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../RoutePaths";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export const AppContext = createContext();
 
@@ -101,7 +101,9 @@ function Game({ kingdom, stage, setStage }) {
   });
 
   useEffect(() => {
-    setCorrectWord(wordSet[stage]);
+    if (stage < wordSet.length) {
+      setCorrectWord(wordSet[stage]);
+    }
     console.log(correctWord);
   }, [stage]);
 
@@ -282,8 +284,10 @@ function Game({ kingdom, stage, setStage }) {
   const nextStage = () => {
     console.log("running nextStage");
     if (gameOver.gameOver) {
-      setStage((stage) => stage + 1);
-      stage++;
+      setStage((stage) =>
+        stage + 1 >= wordSet.length ? wordSet.length - 1 : stage + 1
+      );
+      stage = stage + 1 >= wordSet.length ? wordSet.length - 1 : stage + 1;
       console.log("new stage: " + stage);
       clearBoard(correctWord.length);
       setGameOver({ gameOver: false, guessedWord: false });
@@ -291,9 +295,9 @@ function Game({ kingdom, stage, setStage }) {
       console.log("new correct word: " + correctWord);
       setCurrAttempt({ attempt: 0, letter: 0 });
       saveStage();
-      if (stage === wordSet.length) {
-        navigate(RoutePaths.MAP);
-      } 
+      // if (stage === wordSet.length) {
+      //   navigate(RoutePaths.MAP);
+      // }
     }
   };
 
@@ -372,37 +376,44 @@ function Game({ kingdom, stage, setStage }) {
       <div className="game">
         <WordBoard wordLength={correctWord.length} />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
-        <div className="logout-button" 
+        <div
+          className="logout-button"
           onClick={(e) => {
             e.currentTarget.blur();
             signOut();
-          }}>
+          }}
+        >
           <FontAwesomeIcon icon={faArrowRightFromBracket} />
-           </div>
+        </div>
         <div className="button-row">
           <button
             style={{ backgroundColor: "black", color: "white" }}
             type="button"
             onClick={(e) => {
               e.currentTarget.blur();
+              if (stage == wordSet.length - 1) {
+                nextStage();
+              }
               saveStage();
-              console.log("navigating back to map")
+              console.log("navigating back to map");
               navigate(RoutePaths.MAP);
               clearBoard(correctWord.length);
             }}
           >
             back to map
           </button>
-          <button
-            style={{ backgroundColor: "black", color: "white"}}
-            type="button"
-            onClick={(e) => {
-              e.currentTarget.blur();
-              nextStage();
-            }}
-          >
-            next
-          </button>
+          {stage != wordSet.length - 1 && (
+            <button
+              style={{ backgroundColor: "black", color: "white" }}
+              type="button"
+              onClick={(e) => {
+                e.currentTarget.blur();
+                nextStage();
+              }}
+            >
+              next
+            </button>
+          )}
         </div>
       </div>
     </AppContext.Provider>

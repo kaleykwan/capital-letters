@@ -30,10 +30,10 @@ const navigate = useNavigate();
           <FontAwesomeIcon icon={faArrowRightFromBracket} />
            </div>
       <div className="circle" onClick={() => handleCircleClick(1)}>Starter</div>
-      <div className="circle" onClick={() => handleCircleClick(2)}>Invest</div>
-      <div className="circle" onClick={() => handleCircleClick(3)}>Bank</div>
+      <div className="circle" onClick={() => handleCircleClick(2)}>Investing</div>
+      <div className="circle" onClick={() => handleCircleClick(3)}>Banking</div>
       <div className="circle" onClick={() => handleCircleClick(4)}>Stock</div>
-      <div className="circle" onClick={() => handleCircleClick(5)}>Account</div>
+      <div className="circle" onClick={() => handleCircleClick(5)}>Accounting</div>
       <div className="circle" onClick={() => handleCircleClick(6)}>Insurance</div>
       <div className="circle" onClick={() => handleCircleClick(7)}>Taxation</div>
     </div>

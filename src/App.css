@@ -266,10 +266,12 @@ nav h1 {
 .circle {
   position: absolute;
   /* width: 100px; */
-  padding: 10px;
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   /* height: 60px; */
   border-radius: 25px;
-  background-color: #fbb6f7; /* Set the background color of the circles */
+  background-color: #fb5ff3; /* Set the background color of the circles */
   color: white; /* Set the text color of the circles */
   display: flex;
   justify-content: center;
