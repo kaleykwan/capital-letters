@@ -40,7 +40,7 @@ export default function Auth() {
     <div className="col flex flex-center">
       <div className="col-6 form-widget">
       <p className="title">capital letters</p>
-        <p className="description"  style={{color: 'black'}}>Sign up</p>
+        {/* <p className="description"  style={{color: 'black'}}>Sign up</p> */}
         <form className="form-widget" onSubmit={handleSignUp}>
           <div>
             <input

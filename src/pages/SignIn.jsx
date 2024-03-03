@@ -35,7 +35,7 @@ export default function SignIn() {
     <div className="col flex flex-center">
       <div className="col-6 form-widget">
       <p className="title">capital letters</p>
-        <p className="description" style={{ color: "black" }}>Sign In</p>
+        {/* <p className="description" style={{ color: "black" }}>Sign In</p> */}
         <form className="form-widget" onSubmit={handleLogin}>
           <div>
             <input
