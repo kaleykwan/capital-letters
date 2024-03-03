@@ -50,6 +50,14 @@ export default function Auth() {
               value={signUpEmail}
               required={true}
               onChange={(e) => setSignUpEmail(e.target.value)}
+              style={{ 
+                width: '20%', // Make the input box full width
+                padding: '10px', // Add some padding
+                border: '1px solid #ccc', // Add a border
+                borderRadius: '5px', // Add border radius
+                backgroundColor: '#fff', // Set background color to white
+                marginBottom: '10px',
+              }}
             />
           </div>
           <div>
@@ -60,18 +68,44 @@ export default function Auth() {
               value={signUpPassword}
               required={true}
               onChange={(e) => setSignUpPassword(e.target.value)}
+              style={{ 
+                width: '20%', // Make the input box full width
+                padding: '10px', // Add some padding
+                border: '1px solid #ccc', // Add a border
+                borderRadius: '5px', // Add border radius
+                backgroundColor: '#fff', // Set background color to white
+                marginBottom: '10px',
+              }}
             />
           </div>
           <div>
-            <button className={"button block"} disabled={loading}>
-              {loading ? <span>Loading</span> : <span>Sign Up</span>}
+            <button className={"button block"} disabled={loading}
+            style={{
+              backgroundColor: '#000000', /* Set the default background color */
+              color: '#ffffff', /* Set the default text color */
+              border: 'none', /* Remove border */
+              padding: '10px 20px', /* Add padding */
+              borderRadius: '5px', /* Add border radius */
+              cursor: 'pointer', /* Change cursor to pointer */
+            }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#ff38d1'} /* Change background color on hover */
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#000000'}
+              >
+              {loading ? <span>Loading</span> : <span>Create Account</span>}
             </button>
             <p
               className="description"
-              style={{ color: "black", cursor: "pointer" }}
               onClick={() => navigate(RoutePaths.SIGNIN)}
             >
-               <Link to={() => navigate(RoutePaths.SIGNIN)}>already have an account? sign in</Link>
+               <Link to={() => navigate(RoutePaths.SIGNIN)}
+               style={{
+                color: 'black', 
+                fontSize: '14px', 
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => e.target.style.color = 'pink'}
+                onMouseLeave={(e) => e.target.style.color = 'grey'}
+              >already have an account? sign in</Link>
     
             </p>
           </div>

@@ -46,6 +46,14 @@ export default function SignIn() {
               value={signInEmail}
               required={true}
               onChange={(e) => setSignInEmail(e.target.value)}
+              style={{ 
+                width: '20%', // Make the input box full width
+                padding: '10px', // Add some padding
+                border: '1px solid #ccc', // Add a border
+                borderRadius: '5px', // Add border radius
+                backgroundColor: '#fff', // Set background color to white
+                marginBottom: '10px',
+              }}
             />
           </div>
           <div>
@@ -56,14 +64,41 @@ export default function SignIn() {
               value={signInPassword}
               required={true}
               onChange={(e) => setSignInPassword(e.target.value)}
+              style={{ 
+                width: '20%', // Make the input box full width
+                padding: '10px', // Add some padding
+                border: '1px solid #ccc', // Add a border
+                borderRadius: '5px', // Add border radius
+                backgroundColor: '#fff', // Set background color to white
+                marginBottom: '10px',
+              }}
             />
           </div>
           <div>
-            <button className={"button block"} disabled={loading}>
+            <button className={"button block"} disabled={loading}
+            style={{
+                backgroundColor: '#000000', /* Set the default background color */
+                color: '#ffffff', /* Set the default text color */
+                border: 'none', /* Remove border */
+                padding: '10px 20px', /* Add padding */
+                borderRadius: '5px', /* Add border radius */
+                cursor: 'pointer', /* Change cursor to pointer */
+              }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#ff38d1'} /* Change background color on hover */
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#000000'}
+                >
               {loading ? <span>Loading</span> : <span>Sign In</span>}
             </button>
-            <p className="description" style={{color: 'black'}} onClick={() => navigate(RoutePaths.AUTH)}>
-            <Link to={() => navigate(RoutePaths.AUTH)}>don't have an account? sign up</Link>
+            <p className="description" onClick={() => navigate(RoutePaths.AUTH)}>
+            <Link to={() => navigate(RoutePaths.AUTH)} 
+                style={{
+                  color: 'black', 
+                  fontSize: '14px', 
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => e.target.style.color = 'pink'}
+                onMouseLeave={(e) => e.target.style.color = 'grey'}
+                >don't have an account? sign up</Link>
                 </p>
           </div>
         </form>
