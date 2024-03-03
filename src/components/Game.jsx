@@ -13,25 +13,19 @@ import { RoutePaths } from "../RoutePaths";
 
 export const AppContext = createContext();
 
-const wordSet = [
-  "grants",
-  "partyy",
-  "stocks",
-  "offer",
-  "lease",
-  "asset",
-  "debit",
-  "loans",
-  "quote",
-  "score",
-  "proxy",
-  "index",
-  "audit",
-  "limit",
+const kingdoms = [
+  ['accounting', 'invest', 'capital'],
+  ['stock', 'equity', 'dividend', 'bond', 'mutual', 'securities', 'portfolio', 'yield', 'venture'],
+  ['atm', 'cash', 'loan', 'bank', 'credit', 'deposit', 'savings', 'mortgage', 'interest', 'withdraw', 'overdraft'],
+  ['exchange', 'commodity', 'bull', 'derivative', 'options', 'forex', 'index', 'ipo', 'crypto'],
+  ['tax', 'audit', 'balance', 'journal', 'fiscal', 'gaap', 'ledger', 'depreciate'],
+  ['risk', 'loss', 'claim', 'premium', 'policy', 'coverage', 'liability', 'insolvent'],
+  ['irs', 'haven', 'levy', 'income', 'deduction', 'exemption', 'shelter', 'compliance']
 ];
 
-function Game({ stage, setStage }) {
+function Game({ kingdom, stage, setStage }) {
   const navigate = useNavigate();
+  const wordSet = kingdoms[kingdom];
 
   const session = useContext(UserContext);
   const [board, setBoard] = useState(boardDefault);

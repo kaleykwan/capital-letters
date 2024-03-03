@@ -11,17 +11,18 @@ const navigate = useNavigate();
   const handleCircleClick = (level) => {
     // Navigate to the Game component with the selected level
     // history.push(`/game/${level}`);
-    navigate(RoutePaths.HOME);
+    navigate(RoutePaths.HOME + level);
   };
 
   return (
     <div className="map-container">
-      <div className="circle" onClick={() => handleCircleClick(1)}>1</div>
-      <div className="circle" onClick={() => handleCircleClick(2)}>2</div>
-      <div className="circle" onClick={() => handleCircleClick(3)}>3</div>
-      <div className="circle" onClick={() => handleCircleClick(4)}>4</div>
-      <div className="circle" onClick={() => handleCircleClick(5)}>5</div>
-      <div className="circle" onClick={() => handleCircleClick(6)}>6</div>
+      <div className="circle" onClick={() => handleCircleClick(0)}>1</div>
+      <div className="circle" onClick={() => handleCircleClick(1)}>2</div>
+      <div className="circle" onClick={() => handleCircleClick(2)}>3</div>
+      <div className="circle" onClick={() => handleCircleClick(3)}>4</div>
+      <div className="circle" onClick={() => handleCircleClick(4)}>5</div>
+      <div className="circle" onClick={() => handleCircleClick(5)}>6</div>
+      <div className="circle" onClick={() => handleCircleClick(6)}>7</div>
     </div>
   );
 }

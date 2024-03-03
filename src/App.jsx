@@ -31,7 +31,7 @@ function App() {
             <Routes>
             <Route path={RoutePaths.AUTH} element={<Auth />} />
             <Route path={RoutePaths.MAP} element={<Map />} />
-            <Route path={RoutePaths.HOME} element={<Kingdom stage={stage} setStage={setStage}/>} />
+            <Route path="/kingdom/:name" element={<Kingdom stage={stage} setStage={setStage}/>} />
             </Routes>
           </div>
         </BrowserRouter>
