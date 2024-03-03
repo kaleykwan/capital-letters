@@ -11,7 +11,8 @@ const kingdoms = [
   ['irs', 'haven', 'levy', 'income', 'deduction', 'exemption', 'shelter', 'compliance']
 ];
 
-function ProgressBar({ kingdom, currentLevel }) {
+function ProgressBar({ kingdom, stage }) {
+  console.log("current stage: " + stage);
   const levels = Array.from({ length: kingdoms[kingdom-1].length }, (_, index) => index + 1);
 
   return (
@@ -20,12 +21,12 @@ function ProgressBar({ kingdom, currentLevel }) {
         <div
           style={{
             color: "white",
-            backgroundColor: level <= currentLevel ? "#ff38d1" : "lightpink",
+            backgroundColor: level <= stage ? "#ff38d1" : "lightpink",
             fontWeight: "bolder"
           }}
           key={level}
           className={`progress-circle ${
-            level <= currentLevel ? "completed" : ""
+            level <= stage ? "completed" : ""
           }`}
         >
           {/* {level <= currentLevel ? <span>{level}</span> : level} */}

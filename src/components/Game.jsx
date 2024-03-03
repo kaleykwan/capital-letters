@@ -102,11 +102,12 @@ function Game({ kingdom, stage, setStage }) {
 
   async function saveStage() {
     console.log("saving stage");
-    switch (kingdom) {
+    switch (kingdom + 1) {
       case 1:
         const { data1, error1 } = await supabase
           .from("profiles")
-          .upsert({ user_id: session.user.id, stage_1: stage })
+          .update({ kingdom_1: stage })
+          .eq("user_id", session.user.id)
           .select();
         if (error1) {
           console.log(error1);
@@ -115,37 +116,43 @@ function Game({ kingdom, stage, setStage }) {
       case 2:
         const { data2, error2 } = await supabase
           .from("profiles")
-          .upsert({ user_id: session.user.id, stage_2: stage })
+          .update({ kingdom_2: stage })
+          .eq("user_id", session.user.id)
           .select();
         break;
       case 3:
         const { data3, error3 } = await supabase
           .from("profiles")
-          .upsert({ user_id: session.user.id, stage_3: stage })
+          .update({ kingdom_3: stage })
+          .eq("user_id", session.user.id)
           .select();
         break;
       case 4:
         const { data4, error4 } = await supabase
           .from("profiles")
-          .upsert({ user_id: session.user.id, stage_4: stage })
+          .update({ kingdom_4: stage })
+          .eq("user_id", session.user.id)
           .select();
         break;
       case 5:
         const { data5, error5 } = await supabase
           .from("profiles")
-          .upsert({ user_id: session.user.id, stage_5: stage })
+          .update({ kingdom_5: stage })
+          .eq("user_id", session.user.id)
           .select();
         break;
       case 6:
         const { data6, error6 } = await supabase
           .from("profiles")
-          .upsert({ user_id: session.user.id, stage_6: stage })
+          .update({ kingdom_6: stage })
+          .eq("user_id", session.user.id)
           .select();
         break;
       case 7:
         const { data7, error7 } = await supabase
           .from("profiles")
-          .upsert({ user_id: session.user.id, stage_7: stage })
+          .update({ kingdom_7: stage })
+          .eq("user_id", session.user.id)
           .select();
         break;
     }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../RoutePaths";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -21,6 +21,26 @@ export default function Auth() {
       password: signUpPassword,
     });
 
+    if (data && data.user) {
+      const { error: insertError } = await supabase.from("profiles").insert([
+        {
+          user_id: data.user.id,
+        },
+      ]);
+
+      if (insertError) {
+        console.error(
+          "Error inserting user into 'profiles' table:",
+          insertError
+        );
+      }
+    }
+
+    // const { signInData, signInError } = await supabase.auth.signInWithPassword({
+    //   email: signUpEmail,
+    //   password: signUpPassword,
+    // });
+
     if (error) {
       alert(error.error_description || error.message);
     } else {
@@ -33,7 +53,7 @@ export default function Auth() {
   return (
     <div className="col flex flex-center">
       <div className="col-6 form-widget">
-      <p className="title">capital letters</p>
+        <p className="title">capital letters</p>
         {/* <p className="description"  style={{color: 'black'}}>Sign up</p> */}
         <form className="form-widget" onSubmit={handleSignUp}>
           <div>
@@ -44,14 +64,14 @@ export default function Auth() {
               value={signUpEmail}
               required={true}
               onChange={(e) => setSignUpEmail(e.target.value)}
-              style={{ 
-                width: '20%', // Make the input box full width
-                padding: '10px', // Add some padding
-                border: '1px solid #ccc', // Add a border
-                borderRadius: '15px', // Add border radius
-                backgroundColor: '#fff', // Set background color to white
-                marginBottom: '10px',
-                color: 'black',
+              style={{
+                width: "20%", // Make the input box full width
+                padding: "10px", // Add some padding
+                border: "1px solid #ccc", // Add a border
+                borderRadius: "15px", // Add border radius
+                backgroundColor: "#fff", // Set background color to white
+                marginBottom: "10px",
+                color: "black",
               }}
             />
           </div>
@@ -63,50 +83,57 @@ export default function Auth() {
               value={signUpPassword}
               required={true}
               onChange={(e) => setSignUpPassword(e.target.value)}
-              style={{ 
-                width: '20%', // Make the input box full width
-                padding: '10px', // Add some padding
-                border: '1px solid #ccc', // Add a border
-                borderRadius: '15px', // Add border radius
-                backgroundColor: '#fff', // Set background color to white
-                marginBottom: '10px',
-                color: 'black',
+              style={{
+                width: "20%", // Make the input box full width
+                padding: "10px", // Add some padding
+                border: "1px solid #ccc", // Add a border
+                borderRadius: "15px", // Add border radius
+                backgroundColor: "#fff", // Set background color to white
+                marginBottom: "10px",
+                color: "black",
               }}
             />
           </div>
           <div>
-            <button className={"button block"} disabled={loading}
-            style={{
-              backgroundColor: '#000000', /* Set the default background color */
-              color: '#ffffff', /* Set the default text color */
-              border: 'none', /* Remove border */
-              padding: '10px 20px', /* Add padding */
-              borderRadius: '20px', /* Add border radius */
-              cursor: 'pointer', /* Change cursor to pointer */
-            }}
-            onMouseEnter={(e) =>{ e.target.style.backgroundColor = '#ff38d1';
+            <button
+              className={"button block"}
+              disabled={loading}
+              style={{
+                backgroundColor:
+                  "#000000" /* Set the default background color */,
+                color: "#ffffff" /* Set the default text color */,
+                border: "none" /* Remove border */,
+                padding: "10px 20px" /* Add padding */,
+                borderRadius: "20px" /* Add border radius */,
+                cursor: "pointer" /* Change cursor to pointer */,
+              }}
+            onMouseEnter={(e) =>{
+                (e.target.style.backgroundColor = "#ff38d1")
+              ;
             // e.target.style.color = '#ff38d1';
           } } 
-            onMouseLeave={(e) => {e.target.style.backgroundColor = '#000000';
+            onMouseLeave={(e) => {(e.target.style.backgroundColor = "#000000");
             // e.target.style.color = '#000000';
           }}
-              >
-              {loading ? <span>loading</span> : <span>create account</span>}
+            >
+              {loading ? <span>Loading</span> : <span>Create Account</span>}
             </button>
             <p
               className="description"
               onClick={() => navigate(RoutePaths.SIGNIN)}
             >
-               <Link to={() => navigate(RoutePaths.SIGNIN)}
-               style={{
-                color: 'grey', 
-                fontSize: '14px', 
-                textDecoration: 'none',
-              }}
-              onMouseEnter={(e) => e.target.style.color = 'pink'}
-                onMouseLeave={(e) => e.target.style.color = 'grey'}
-              >already have an account? sign in</Link>
-    
+              <Link
+                to={() => navigate(RoutePaths.SIGNIN)}
+                style={{
+                  color: "grey",
+                  fontSize: "14px",
+                  textDecoration: "none",
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "pink")}
+                onMouseLeave={(e) => (e.target.style.color = "grey")}
+              >
+                already have an account? sign in
+              </Link>
             </p>
           </div>
         </form>
