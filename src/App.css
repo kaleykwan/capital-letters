@@ -49,6 +49,14 @@ nav h1 {
   padding-top: 20px;
   flex-direction: column;
 }
+.logout-button {
+  position: absolute;
+  top: 30px; /* Adjust as needed */
+  right: 50px; /* Adjust as needed */
+  cursor: pointer;
+  font-size: 25px;
+  color: black;
+}
 
 .board {
   width: 320px;

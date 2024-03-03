@@ -42,7 +42,7 @@ export default function SignIn() {
             <input
               className="inputField"
               type="email"
-              placeholder="Email"
+              placeholder="email"
               value={signInEmail}
               required={true}
               onChange={(e) => setSignInEmail(e.target.value)}
@@ -61,7 +61,7 @@ export default function SignIn() {
             <input
               className="inputField"
               type="password"
-              placeholder="Password"
+              placeholder="password"
               value={signInPassword}
               required={true}
               onChange={(e) => setSignInPassword(e.target.value)}
@@ -89,7 +89,7 @@ export default function SignIn() {
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#ff38d1'} /* Change background color on hover */
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#000000'}
                 >
-              {loading ? <span>Loading</span> : <span>Sign In</span>}
+              {loading ? <span>loading</span> : <span>sign in</span>}
             </button>
             <p className="description" onClick={() => navigate(RoutePaths.AUTH)}>
             <Link to={() => navigate(RoutePaths.AUTH)} 

@@ -10,6 +10,10 @@ import { supabase } from "../supabaseClient";
 import { UserContext } from "../Contexts";
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../RoutePaths";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export const AppContext = createContext();
 
@@ -275,6 +279,9 @@ function Game({ kingdom, stage, setStage }) {
       // clearBoard();
       setCurrAttempt({ attempt: 0, letter: 0 });
       saveStage();
+      if (stage === wordSet.length) {
+        navigate(RoutePaths.MAP);
+      } 
     }
   };
 
@@ -354,6 +361,13 @@ function Game({ kingdom, stage, setStage }) {
       <div className="game">
         <WordBoard wordLength={correctWord.length} />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+        <div className="logout-button" 
+          onClick={(e) => {
+            e.currentTarget.blur();
+            signOut();
+          }}>
+          <FontAwesomeIcon icon={faArrowRightFromBracket} />
+           </div>
         <div className="button-row">
           <button
             style={{ backgroundColor: "black", color: "white" }}
@@ -370,22 +384,11 @@ function Game({ kingdom, stage, setStage }) {
             type="button"
             onClick={(e) => {
               e.currentTarget.blur();
-              clearBoard();
-            }}
-            disabled={gameOver.gameOver}
-          >
-            Clear Board
-          </button> */}
-          <button
-            style={{ backgroundColor: "black", color: "white" }}
-            type="button"
-            onClick={(e) => {
-              e.currentTarget.blur();
               signOut();
             }}
           >
             Logout
-          </button>
+          </button> */}
           <button
             style={{ backgroundColor: "black", color: "white" }}
             type="button"
@@ -395,7 +398,7 @@ function Game({ kingdom, stage, setStage }) {
               navigate(RoutePaths.MAP);
             }}
           >
-            Back
+            Back to map
           </button>
         </div>
       </div>

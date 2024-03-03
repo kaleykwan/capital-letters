@@ -21,11 +21,6 @@ export default function Auth() {
       password: signUpPassword,
     });
 
-    // const { signInData, signInError } = await supabase.auth.signInWithPassword({
-    //   email: signUpEmail,
-    //   password: signUpPassword,
-    // });
-
     if (error) {
       alert(error.error_description || error.message);
     } else {
@@ -45,7 +40,7 @@ export default function Auth() {
             <input
               className="inputField"
               type="email"
-              placeholder="Email"
+              placeholder="email"
               value={signUpEmail}
               required={true}
               onChange={(e) => setSignUpEmail(e.target.value)}
@@ -64,7 +59,7 @@ export default function Auth() {
             <input
               className="inputField"
               type="password"
-              placeholder="Password"
+              placeholder="password"
               value={signUpPassword}
               required={true}
               onChange={(e) => setSignUpPassword(e.target.value)}
@@ -92,7 +87,7 @@ export default function Auth() {
               onMouseEnter={(e) => e.target.style.backgroundColor = '#ff38d1'} /* Change background color on hover */
               onMouseLeave={(e) => e.target.style.backgroundColor = '#000000'}
               >
-              {loading ? <span>Loading</span> : <span>Create Account</span>}
+              {loading ? <span>loading</span> : <span>create account</span>}
             </button>
             <p
               className="description"
