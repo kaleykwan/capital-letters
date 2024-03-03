@@ -161,6 +161,7 @@ function Game({ kingdom, stage, setStage }) {
   async function signOut() {
     const { error } = await supabase.auth.signOut();
     saveStage();
+    clearBoard(correctWord.length);
     navigate(RoutePaths.AUTH);
   }
 
