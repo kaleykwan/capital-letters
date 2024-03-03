@@ -2,6 +2,7 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../RoutePaths";
+import { Link } from 'react-router-dom'
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -20,10 +21,10 @@ export default function Auth() {
       password: signUpPassword,
     });
 
-    const { signInData, signInError } = await supabase.auth.signInWithPassword({
-      email: signUpEmail,
-      password: signUpPassword,
-    });
+    // const { signInData, signInError } = await supabase.auth.signInWithPassword({
+    //   email: signUpEmail,
+    //   password: signUpPassword,
+    // });
 
     if (error) {
       alert(error.error_description || error.message);
@@ -34,7 +35,6 @@ export default function Auth() {
     }
     setLoading(false);
   };
-
 
   return (
     <div className="col flex flex-center">
@@ -71,10 +71,8 @@ export default function Auth() {
               style={{ color: "black", cursor: "pointer" }}
               onClick={navigate(RoutePaths.SIGNIN)}
             >
-              <a href="#" onClick={navigate(RoutePaths.SIGNIN)}>
-              already have an account? sign in
-                </a>
-              
+               <Link to={() => navigate(RoutePaths.SIGNIN)}>already have an account? sign in</Link>
+    
             </p>
           </div>
         </form>

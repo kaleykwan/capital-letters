@@ -2,6 +2,7 @@ import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../RoutePaths";
+import { Link } from 'react-router-dom'
 
 
 export default function SignIn() {
@@ -62,9 +63,7 @@ export default function SignIn() {
               {loading ? <span>Loading</span> : <span>Sign In</span>}
             </button>
             <p className="description" style={{color: 'black'}}>
-            <a href="#" onClick={navigate(RoutePaths.AUTH)}>
-                don't have an account? sign up
-                </a>
+            <Link to={() => navigate(RoutePaths.AUTH)}>don't have an account? sign up</Link>
                 </p>
           </div>
         </form>
