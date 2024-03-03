@@ -252,11 +252,15 @@ nav h1 {
 .map-container {
   position: relative;
   width: 100%; /* Adjust the width of the map container */
-  height: 100vh; /* Adjust the height of the map container */
-  /* background-image: url('./assets/fantasy_map.jpeg'); */
-  background-size: cover; /* Cover the entire container with the background image */
-  background-repeat: no-repeat; /* Prevent the background image from repeating */
-  background-position: center; /* Center the background image */
+  height: 100vh;
+  background-image: url('./assets/fantasy_map.jpeg');
+  /* background-size: cover; */
+  background-size: 103% 105%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  background-blend-mode: overlay;
+  /* background-color: rgba(255, 119, 194, 0.3);  */
 }
 
 .circle {
@@ -272,11 +276,14 @@ nav h1 {
   font-size: 28px; /* Adjust the font size of the text inside the circles */
   cursor: pointer;
 }
+.circle:hover {
+  background-color: #f723d4; /* Set the brighter/darker pink color on hover */
+}
 
 .circle:nth-child(2) { top: 10%; left: 40%; }
 .circle:nth-child(3) { top: 25%; left: 55%; }
 .circle:nth-child(4) { top: 40%; left: 30%; }
-.circle:nth-child(5) { top: 55%; left: 45%; }
-.circle:nth-child(6) { top: 65%; left: 70%; }
-.circle:nth-child(7) { top: 75%; left: 60%; }
-.circle:nth-child(8) { top: 85%; left: 40%; }
+.circle:nth-child(5) { top: 55%; left: 40%; }
+.circle:nth-child(6) { top: 55%; left: 70%; }
+.circle:nth-child(7) { top: 70%; left: 60%; }
+.circle:nth-child(8) { top: 75%; left: 40%; }
