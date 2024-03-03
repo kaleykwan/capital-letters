@@ -15,13 +15,25 @@ function App() {
   const [stage, setStage] = useState(0);
 
   useEffect(() => {
+    async function addUser() {
+      const { error } = await supabase
+        .from("users")
+        .upsert({ user_id: session.user_id });
+
+      if (error) {
+        console.log(error);
+      }
+    }
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
+      console.log("session: " + session);
+      addUser();
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
+
   }, []);
 
   return (

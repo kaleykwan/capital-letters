@@ -31,7 +31,6 @@ export default function Auth() {
     } else {
       // navigate(RoutePaths.HOME);
       navigate(RoutePaths.MAP);
-
     }
     setLoading(false);
   };

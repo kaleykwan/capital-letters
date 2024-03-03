@@ -14,13 +14,72 @@ import { RoutePaths } from "../RoutePaths";
 export const AppContext = createContext();
 
 const kingdoms = [
-  ['accounting', 'invest', 'capital'],
-  ['stock', 'equity', 'dividend', 'bond', 'mutual', 'securities', 'portfolio', 'yield', 'venture'],
-  ['atm', 'cash', 'loan', 'bank', 'credit', 'deposit', 'savings', 'mortgage', 'interest', 'withdraw', 'overdraft'],
-  ['exchange', 'commodity', 'bull', 'derivative', 'options', 'forex', 'index', 'ipo', 'crypto'],
-  ['tax', 'audit', 'balance', 'journal', 'fiscal', 'gaap', 'ledger', 'depreciate'],
-  ['risk', 'loss', 'claim', 'premium', 'policy', 'coverage', 'liability', 'insolvent'],
-  ['irs', 'haven', 'levy', 'income', 'deduction', 'exemption', 'shelter', 'compliance']
+  ["accounting", "invest", "capital"],
+  [
+    "stock",
+    "equity",
+    "dividend",
+    "bond",
+    "mutual",
+    "securities",
+    "portfolio",
+    "yield",
+    "venture",
+  ],
+  [
+    "atm",
+    "cash",
+    "loan",
+    "bank",
+    "credit",
+    "deposit",
+    "savings",
+    "mortgage",
+    "interest",
+    "withdraw",
+    "overdraft",
+  ],
+  [
+    "exchange",
+    "commodity",
+    "bull",
+    "derivative",
+    "options",
+    "forex",
+    "index",
+    "ipo",
+    "crypto",
+  ],
+  [
+    "tax",
+    "audit",
+    "balance",
+    "journal",
+    "fiscal",
+    "gaap",
+    "ledger",
+    "depreciate",
+  ],
+  [
+    "risk",
+    "loss",
+    "claim",
+    "premium",
+    "policy",
+    "coverage",
+    "liability",
+    "insolvent",
+  ],
+  [
+    "irs",
+    "haven",
+    "levy",
+    "income",
+    "deduction",
+    "exemption",
+    "shelter",
+    "compliance",
+  ],
 ];
 
 function Game({ kingdom, stage, setStage }) {
@@ -37,10 +96,61 @@ function Game({ kingdom, stage, setStage }) {
     guessedWord: false,
   });
 
+  async function saveStage() {
+    console.log("saving stage");
+    switch (kingdom) {
+      case 1:
+        const { data1, error1 } = await supabase
+          .from("profiles")
+          .upsert({ user_id: session.user.id, stage_1: stage })
+          .select();
+        if (error1) {
+          console.log(error1);
+        }
+        break;
+      case 2:
+        const { data2, error2 } = await supabase
+          .from("profiles")
+          .upsert({ user_id: session.user.id, stage_2: stage })
+          .select();
+        break;
+      case 3:
+        const { data3, error3 } = await supabase
+          .from("profiles")
+          .upsert({ user_id: session.user.id, stage_3: stage })
+          .select();
+        break;
+      case 4:
+        const { data4, error4 } = await supabase
+          .from("profiles")
+          .upsert({ user_id: session.user.id, stage_4: stage })
+          .select();
+        break;
+      case 5:
+        const { data5, error5 } = await supabase
+          .from("profiles")
+          .upsert({ user_id: session.user.id, stage_5: stage })
+          .select();
+        break;
+      case 6:
+        const { data6, error6 } = await supabase
+          .from("profiles")
+          .upsert({ user_id: session.user.id, stage_6: stage })
+          .select();
+        break;
+      case 7:
+        const { data7, error7 } = await supabase
+          .from("profiles")
+          .upsert({ user_id: session.user.id, stage_7: stage })
+          .select();
+        break;
+    }
+  }
+
   async function signOut() {
     const { error } = await supabase.auth.signOut();
+    saveStage();
     navigate(RoutePaths.AUTH);
-
   }
 
   function clearBoard() {
@@ -163,6 +273,7 @@ function Game({ kingdom, stage, setStage }) {
       console.log("new correct word: " + correctWord);
       clearBoard();
       setCurrAttempt({ attempt: 0, letter: 0 });
+      saveStage();
     }
   };
 
@@ -213,7 +324,7 @@ function Game({ kingdom, stage, setStage }) {
   };
 
   const onSelectLetter = (key) => {
-    if (currAttempt.letter > (correctWord.length - 1)) return;
+    if (currAttempt.letter > correctWord.length - 1) return;
     const newBoard = [...board];
     newBoard[currAttempt.attempt][currAttempt.letter] = key;
     setBoard(newBoard);
@@ -240,7 +351,7 @@ function Game({ kingdom, stage, setStage }) {
       }}
     >
       <div className="game">
-        <WordBoard wordLength={correctWord.length}/>
+        <WordBoard wordLength={correctWord.length} />
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         <div className="button-row">
           <button
@@ -269,7 +380,7 @@ function Game({ kingdom, stage, setStage }) {
             type="button"
             onClick={(e) => {
               e.currentTarget.blur();
-              signOut(); 
+              signOut();
             }}
           >
             Logout
@@ -279,6 +390,7 @@ function Game({ kingdom, stage, setStage }) {
             type="button"
             onClick={(e) => {
               e.currentTarget.blur();
+              saveStage();
               navigate(RoutePaths.MAP);
             }}
           >
