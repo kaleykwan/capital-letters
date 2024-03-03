@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import Game from "./components/Game";
 import React, { createContext, useEffect } from "react";
 import Auth from "./pages/Auth";
 import { supabase } from "./supabaseClient";
 import { UserContext } from "./Contexts";
-import ProgressBar from "./components/ProgressBar";
 import Kingdom from "./pages/Kingdom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { RoutePaths } from "./routePaths";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -25,7 +25,14 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={session}>
-        {!session ? <Auth /> : <Kingdom stage={stage} setStage={setStage} />}
+        <BrowserRouter>
+          <div>
+            <Routes>
+            <Route path={RoutePaths.AUTH} element={<Auth />} />
+            <Route path={RoutePaths.HOME} element={<Kingdom stage={stage} setStage={setStage}/>} />
+            </Routes>
+          </div>
+        </BrowserRouter>
       </UserContext.Provider>
     </div>
   );

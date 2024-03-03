@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+import { useNavigate } from "react-router-dom";
+import { RoutePaths } from "../routePaths";
 
 export default function Auth() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
@@ -25,7 +28,7 @@ export default function Auth() {
     if (error) {
       alert(error.error_description || error.message);
     } else {
-      alert("Signed up!");
+      navigate(RoutePaths.HOME);
     }
     setLoading(false);
   };
@@ -42,7 +45,7 @@ export default function Auth() {
     if (error) {
       alert(error.error_description || error.message);
     } else {
-      alert("Signed in!");
+      navigate(RoutePaths.HOME);
     }
     setLoading(false);
   };
