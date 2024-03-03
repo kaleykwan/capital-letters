@@ -280,6 +280,16 @@ function Game({ stage, setStage }) {
           >
             Logout
           </button>
+          <button
+            style={{ backgroundColor: "black", color: "white" }}
+            type="button"
+            onClick={(e) => {
+              e.currentTarget.blur();
+              navigate(RoutePaths.MAP);
+            }}
+          >
+            Back
+          </button>
         </div>
       </div>
     </AppContext.Provider>
