@@ -242,7 +242,7 @@ function Game({ stage, setStage }) {
       }}
     >
       <div className="game">
-        <WordBoard />
+        <WordBoard wordLength={correctWord.length + 1}/>
         {gameOver.gameOver ? <GameOver /> : <Keyboard />}
         <div className="button-row">
           <button

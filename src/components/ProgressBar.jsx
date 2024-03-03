@@ -9,8 +9,8 @@ function ProgressBar({ currentLevel }) {
       {levels.map((level) => (
         <div
           style={{
-            color: level <= currentLevel ? "white" : "black",
-            borderColor: level <= currentLevel ? "#ff38d1" : "#7a7a7a",
+            color: "white",
+            backgroundColor: level <= currentLevel ? "#ff38d1" : "lightpink",
             fontWeight: "bolder"
           }}
           key={level}

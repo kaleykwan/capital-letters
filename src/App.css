@@ -160,10 +160,10 @@ nav h1 {
 }
 
 .progress-circle {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 2px solid;
+  /* border: 2px solid; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,17 +175,17 @@ nav h1 {
 .progress-circle.completed {
   background-color: #ff38d1;
 }
-.progress-circle::before {
+/* .progress-circle::before {
   content: "";
   position: absolute;
   width: 55%;
   height: 3px;
   background-color: #7a7a7a;
   top: 50%;
-  /* left: calc(100%); */
+  left: calc(100%);
   transform: translateX(-140%);
-  /* position: relative; */
-}
+  position: relative;
+} */
 
 .progress-circle:first-child::before {
   display: none; /* hide line before first circle */
