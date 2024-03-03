@@ -27,7 +27,8 @@ function Letter({ letterPos, attemptVal }) {
             ? "#fbb6f7"
             : letterState == "error"
             ? "#3a393c"
-            : "black",
+            : "#b8b8b8",
+            borderWidth: 2,
         color: letterState == "correct"
         ? "white"
         : letterState == "almost"

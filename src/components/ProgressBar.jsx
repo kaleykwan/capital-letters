@@ -1,5 +1,5 @@
 import React from "react";
-import '../App.css'
+import "../App.css";
 
 function ProgressBar({ currentLevel }) {
   const levels = Array.from({ length: 14 }, (_, index) => index + 1);
@@ -7,7 +7,17 @@ function ProgressBar({ currentLevel }) {
   return (
     <div className="progress-bar">
       {levels.map((level) => (
-        <div style={{color: level <= currentLevel ? "white" : "black", borderColor: level <= currentLevel ? "#ff38d1" : "black"}}key={level} className={`progress-circle ${level <= currentLevel ? 'completed' : ''}`}>
+        <div
+          style={{
+            color: level <= currentLevel ? "white" : "black",
+            borderColor: level <= currentLevel ? "#ff38d1" : "#7a7a7a",
+            fontWeight: "bolder"
+          }}
+          key={level}
+          className={`progress-circle ${
+            level <= currentLevel ? "completed" : ""
+          }`}
+        >
           {/* {level <= currentLevel ? <span>{level}</span> : level} */}
           {level}
         </div>
@@ -17,15 +27,6 @@ function ProgressBar({ currentLevel }) {
 }
 
 export default ProgressBar;
-
-
-
-
-
-
-
-
-
 
 // import React, { useState } from 'react';
 

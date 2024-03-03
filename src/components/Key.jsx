@@ -17,6 +17,7 @@ function Key({ keyVal, bigKey, disabled }) {
   };
   return (
     <div
+      style={{color: disabled ? "white" : "black"}}
       className="key"
       id={bigKey ? "big" : disabled && "disabled"}
       onClick={selectLetter}

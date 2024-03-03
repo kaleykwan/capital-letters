@@ -4,7 +4,7 @@
   width: 100vw;
   height: 100vh;
   /* height: 100%; */
-  color: black;
+  /* color: black; */
   overflow: auto;
 }
 
@@ -78,7 +78,7 @@ nav h1 {
   display: grid;
   place-items: center;
   font-size: 30px;
-  border-radius: 5px;
+  border-radius: 3px;
   font-weight: bolder;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
@@ -136,12 +136,13 @@ nav h1 {
   display: grid;
   place-items: center;
   font-size: 20px;
-  background-color: grey;
+  font-weight: bolder;
+  background-color: #d9d9d9;
   /* font-weight: bold; */
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  /* font-family: Arial, Helvetica, sans-serif; */
   cursor: pointer;
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19); */
 }
 
 #big {
@@ -162,7 +163,7 @@ nav h1 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #751a87;
+  border: 2px solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,7 +180,7 @@ nav h1 {
   position: absolute;
   width: 55%;
   height: 3px;
-  background-color: black;
+  background-color: #7a7a7a;
   top: 50%;
   /* left: calc(100%); */
   transform: translateX(-140%);
