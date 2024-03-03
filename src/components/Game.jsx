@@ -14,7 +14,7 @@ import { RoutePaths } from "../RoutePaths";
 export const AppContext = createContext();
 
 const kingdoms = [
-  ["accounting", "invest", "capital"],
+  ["debt", "invest", "capital"],
   [
     "stock",
     "equity",
@@ -153,12 +153,12 @@ function Game({ kingdom, stage, setStage }) {
     navigate(RoutePaths.AUTH);
   }
 
-  function clearBoard() {
+  function clearBoard(length) {
     console.log("clearing board");
     const newBoard = [...board];
     setDisabledLetters([]);
     for (let i = 0; i <= 5; i++) {
-      for (let j = 0; j <= 5; j++) {
+      for (let j = 0; j <= length; j++) {
         newBoard[i][j] = "";
         setCurrAttempt({ attempt: 0, letter: 0 });
       }
@@ -268,10 +268,11 @@ function Game({ kingdom, stage, setStage }) {
       setStage((stage) => stage + 1);
       stage++;
       console.log("new stage: " + stage);
+      clearBoard(correctWord.length);
       setGameOver({ gameOver: false, guessedWord: false });
       setCorrectWord(wordSet[stage]);
       console.log("new correct word: " + correctWord);
-      clearBoard();
+      // clearBoard();
       setCurrAttempt({ attempt: 0, letter: 0 });
       saveStage();
     }
@@ -364,7 +365,7 @@ function Game({ kingdom, stage, setStage }) {
           >
             Next
           </button>
-          <button
+          {/* <button
             style={{ backgroundColor: "black", color: "white" }}
             type="button"
             onClick={(e) => {
@@ -374,7 +375,7 @@ function Game({ kingdom, stage, setStage }) {
             disabled={gameOver.gameOver}
           >
             Clear Board
-          </button>
+          </button> */}
           <button
             style={{ backgroundColor: "black", color: "white" }}
             type="button"

@@ -245,8 +245,8 @@ nav h1 {
 /* Randomly position the circles */
 .circle:nth-child(1) { top: 10%; left: 40%; }
 .circle:nth-child(2) { top: 25%; left: 55%; }
-.circle:nth-child(3) { top: 40%; left: 35%; }
+.circle:nth-child(3) { top: 40%; left: 30%; }
 .circle:nth-child(4) { top: 55%; left: 45%; }
 .circle:nth-child(5) { top: 65%; left: 70%; }
-.circle:nth-child(6) { top: 85%; left: 60%; }
-
+.circle:nth-child(6) { top: 75%; left: 60%; }
+.circle:nth-child(7) { top: 85%; left: 40%; }

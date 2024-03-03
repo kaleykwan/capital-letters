@@ -39,7 +39,7 @@ function GameOver() {
       <h1 className="correct-word">Correct Word: {correctWord}</h1>
       <h1 className="definition-style">Definition: {definition}</h1>
       {gameOver.guessedWord && (
-        <h3>You guessed in {currAttempt.attempt} attempts</h3>
+        <h3  style={{ color: "black" }}>You guessed in {currAttempt.attempt} attempts</h3>
       )}
     </div>
   );
