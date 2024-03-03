@@ -3,7 +3,8 @@ import { supabase } from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../RoutePaths";
 
-export default function Auth() {
+
+export default function SignIn() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [signUpEmail, setSignUpEmail] = useState("");
@@ -11,18 +12,13 @@ export default function Auth() {
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
 
-  const handleSignUp = async (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
 
     setLoading(true);
-    const { data, error } = await supabase.auth.signUp({
-      email: signUpEmail,
-      password: signUpPassword,
-    });
-
-    const { signInData, signInError } = await supabase.auth.signInWithPassword({
-      email: signUpEmail,
-      password: signUpPassword,
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: signInEmail,
+      password: signInPassword,
     });
 
     if (error) {
@@ -35,21 +31,20 @@ export default function Auth() {
     setLoading(false);
   };
 
-
   return (
     <div className="col flex flex-center">
       <div className="col-6 form-widget">
       <p className="title">capital letters</p>
-        <p className="description"  style={{color: 'black'}}>Sign up</p>
-        <form className="form-widget" onSubmit={handleSignUp}>
+        <p className="description" style={{ color: "black" }}>Sign In</p>
+        <form className="form-widget" onSubmit={handleLogin}>
           <div>
             <input
               className="inputField"
               type="email"
               placeholder="Email"
-              value={signUpEmail}
+              value={signInEmail}
               required={true}
-              onChange={(e) => setSignUpEmail(e.target.value)}
+              onChange={(e) => setSignInEmail(e.target.value)}
             />
           </div>
           <div>
@@ -57,25 +52,20 @@ export default function Auth() {
               className="inputField"
               type="password"
               placeholder="Password"
-              value={signUpPassword}
+              value={signInPassword}
               required={true}
-              onChange={(e) => setSignUpPassword(e.target.value)}
+              onChange={(e) => setSignInPassword(e.target.value)}
             />
           </div>
           <div>
             <button className={"button block"} disabled={loading}>
-              {loading ? <span>Loading</span> : <span>Sign Up</span>}
+              {loading ? <span>Loading</span> : <span>Sign In</span>}
             </button>
-            <p
-              className="description"
-              style={{ color: "black", cursor: "pointer" }}
-              onClick={navigate(RoutePaths.SIGNIN)}
-            >
-              <a href="#" onClick={navigate(RoutePaths.SIGNIN)}>
-              already have an account? sign in
+            <p className="description" style={{color: 'black'}}>
+            <a href="#" onClick={navigate(RoutePaths.AUTH)}>
+                don't have an account? sign up
                 </a>
-              
-            </p>
+                </p>
           </div>
         </form>
       </div>

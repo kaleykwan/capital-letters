@@ -3,6 +3,7 @@ import "./App.css";
 import React, { createContext, useEffect } from "react";
 import Auth from "./pages/Auth";
 import Map from "./pages/Map";
+import SignIn from "./pages/SignIn";
 import { supabase } from "./supabaseClient";
 import { UserContext } from "./Contexts";
 import Kingdom from "./pages/Kingdom";
@@ -30,6 +31,7 @@ function App() {
           <div>
             <Routes>
             <Route path={RoutePaths.AUTH} element={<Auth />} />
+            <Route path={RoutePaths.SIGNIN} element={<SignIn />} />
             <Route path={RoutePaths.MAP} element={<Map />} />
             <Route path="/kingdom/:name" element={<Kingdom stage={stage} setStage={setStage}/>} />
             </Routes>
